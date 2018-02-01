@@ -2,7 +2,7 @@
   <head>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/body.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/body.css')}}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
     <!-- Compiled and minified JavaScript -->
@@ -13,17 +13,17 @@
       <h1 class="center">The Mondo Project</h1>
       <div id="welcome_icons">
         <div class="row content">
-          <div class="col s4"><a href="fa"><div class="circle-text">FA</div></a></div>
-          <div class="col s4"><a href="who"><div class="circle-text">WHO</div></a></div>
-          <div class="col s4"><a href="moh"><div class="circle-text">MOH</div></a></div>
+          <div class="col s4"><a href="/fa"><div class="circle-text">FA</div></a></div>
+          <div class="col s4"><a href="/who"><div class="circle-text">WHO</div></a></div>
+          <div class="col s4"><a href="/moh"><div class="circle-text">MOH</div></a></div>
         </div>
         <div class="row content">
-          <div class="col s4"><a href="customs"><div class="circle-text">Customs</div></a></div>
-          <div class="col s4"><a href="ihc"><div class="circle-text">IHC</div></a></div>
-          <div class="col s4"><a href="mofa"><div class="circle-text">MoFA</div></a></div>
+          <div class="col s4"><a href="/customs"><div class="circle-text">Customs</div></a></div>
+          <div class="col s4"><a href="/ihc"><div class="circle-text">IHC</div></a></div>
+          <div class="col s4"><a href="/mofa"><div class="circle-text">MoFA</div></a></div>
         </div>
         <div class="row content">
-          <div class="col s12"><a href="ca"><div class="circle-text">Clearing Agent</div></a></div>
+          <div class="col s12"><a href="/ca"><div class="circle-text">Clearing Agent</div></a></div>
         </div> 
       </div>
   </body>
