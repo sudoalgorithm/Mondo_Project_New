@@ -1,0 +1,411 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/body.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <title>Forwarding Agent - Blockchain Mondo Project</title>
+    <script type="text/javascript">
+    // For the DatePicker utility from MaterializeCSS :)
+      $(document).ready(function(){
+        $('.datepicker').datepicker({
+          container: 'body'
+        });
+      });
+      $(document).ready(function(){
+        $('select').select();
+      });
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+    </script>
+  </head>
+  <body onload='expandToWindow();' >
+    <!-- Page Layout here -->
+      {{include 'default/header.html'}}
+        <div class="col s12 m8 l9">
+              <h2>Forwarding Agent - FA</h2>
+              <!-- START MAIN CONTENT -->
+              <div class="main_content" style="padding-top: 0.679em;">
+
+                <h3>Network Transactions</h3>
+                <div class="network_content">
+                  <!-- START TABLE -->
+                        <table class="striped centered responsive-table">
+                          <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Transaction ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Dec 10, 2017</td>
+                              <td>01:33:45</td>
+                              <td>8D85F559EC1A56D9E6D80B72F61C22B9BD4939034CDAF88E8E7A13868F24C73E</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 11, 2017</td>
+                              <td>14:25:00</td>
+                              <td>387ECCA8BB2A9C6CDF1EE2781DFAC8C1B6A0715F4B3C7C3A56A9CF8AAF6FEE46</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 25, 2017</td>
+                              <td>05:55:18</td>
+                              <td>65D0E4E72A6799688218FFA5216863173127B07DBA48E45420AA93B5F7762D5A</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  <!-- END TABLE -->
+                  <!-- Can add Pagination if required :) -->
+                </div>
+
+                <h3>Create</h3>
+                <div class="create_content center">
+                    <a class="waves-effect waves-light btn modal-trigger oval" href="#modal1">Packing List</a>
+                    <!-- START MODAL 1 -->
+                    <div id="modal1" class="modal modal-fixed-footer modal-bigger">
+                      <div class="modal-content">
+                      <!-- START FORM 1 (PACKING LIST) -->
+                      <h3>Packing List Form</h3>
+                        <div class="row">
+                          <form class="col s12">
+                            <!-- packingListId -->
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input type="text" id="packingListID">
+                                <label for="packingListID">Packing List ID</label>
+                              </div>
+                            </div>                            
+                            <!-- To/From -->
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <input type="text" id="to">
+                                <label for="to">To</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input type="text" id="from">
+                                <label for="from">From</label>
+                              </div>
+                            </div>
+                            <!-- Ship Date-->
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input type="text" id="shipdate" class="datepicker">
+                                <label for="shipdate">Ship Date</label>
+                              </div>
+                            </div>
+                            <!-- F.O.B. Shipping Point -->
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input type="text" id="fob">
+                                <label for="fob">F.O.B. Shipping Point</label>
+                              </div>
+                            </div>
+                            <!-- Account No./Order No. -->
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <input type="text" id="accountnumber">
+                                <label for="accountnumber">Account Number</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input type="text" id="ordernumber">
+                                <label for="ordernumber">Order Number</label>
+                              </div>
+                            </div>
+                            <!-- Department/Terms - No Anticipation -->
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <input type="text" id="department">
+                                <label for="department">Department</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input type="text" id="terms">
+                                <label for="terms">Terms - No Anticipation</label>
+                              </div>
+                            </div>
+                            <!-- QTY Ordered/QTY Shipped -->
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <input type="number" id="qtyorder">
+                                <label for="qtyorder">Quantity Ordered</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input type="number" id="qtyshipped">
+                                <label for="qtyshipped">Quantity Shipped</label>
+                              </div>
+                            </div>
+                            <!-- Description -->
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <textarea id="desc" class="materialize-textarea"></textarea>
+                                <label for="desc">Description</label>
+                              </div>
+                            </div>
+                            <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
+                            <div class="row">
+                              <div class="input-field col s4">
+                                <input type="number" id="unitweight">
+                                <label for="unitweight">Unit Weight</label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input type="number" id="totalweight">
+                                <label for="totalweight">Total Weight</label>
+                              </div>
+                              <div class="input-field col s4">
+                                <input type="number" id="totalcubicft">
+                                <label for="totalcubicft">Total Cubic FT.</label>
+                              </div>
+                            </div>
+                            <!-- Comments/Date :) -->
+                            <div class="row">
+                              <div class="input-field col s6">
+                                <textarea id="comments" class="materialize-textarea"></textarea>
+                                <label for="comments">Comments</label>
+                              </div>
+                              <div class="input-field col s6">
+                                <input type="text" id="todaydate" class="datepicker">
+                                <label for="todaydate">Date</label>
+                              </div>
+                            </div>
+                            <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                          </form>
+                        </div>
+                      <!-- END FORM 1 (PACKING LIST) -->
+                      </div>
+                      <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 1 -->
+
+                    <a class="waves-effect waves-light btn modal-trigger oval" href="#modal2">Invoice</a>
+                    <!-- START MODAL 2 -->
+                    <div id="modal2" class="modal modal-fixed-footer modal-bigger">
+                      <div class="modal-content">
+                        <!-- START FORM 2 (INVOICE) -->
+                        <h3>Invoice Form</h3>
+                          <div class="row">
+                            <form class="col s12">
+                              <!-- invoiceId -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" id="invoiceID">
+                                  <label for="invoiceID">Invoice ID</label>
+                                </div>
+                              </div>                             
+                              <!-- To/From -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="text" id="to">
+                                  <label for="to">To</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="text" id="from">
+                                  <label for="from">From</label>
+                                </div>
+                              </div>
+                              <!-- Ship Date -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" id="shipdate" class="datepicker">
+                                  <label for="shipdate">Ship Date</label>
+                                </div>
+                              </div>
+                              <!-- F.O.B. Shipping Point -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" id="fob">
+                                  <label for="fob">F.O.B. Shipping Point</label>
+                                </div>
+                              </div>
+                              <!-- Account No./Order No. -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="text" id="accountnumber">
+                                  <label for="accountnumber">Account Number</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="text" id="ordernumber">
+                                  <label for="ordernumber">Order Number</label>
+                                </div>
+                              </div>
+                              <!-- Department/Terms -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="text" id="department">
+                                  <label for="department">Department</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="text" id="terms">
+                                  <label for="terms">Terms - No Anticipation</label>
+                                </div>                           
+                              </div>
+                              <!-- QTY Ordered/QTY Shipped -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="number" id="qtyorder">
+                                  <label for="qtyorder">Quantity Ordered</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="number" id="qtyshipped">
+                                  <label for="qtyshipped">Quantity Shipped</label>
+                                </div>
+                              </div>
+                              <!-- Description -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <textarea id="desc" class="materialize-textarea"></textarea>
+                                  <label for="desc">Description</label>
+                                </div>
+                              </div>
+                              <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
+                              <div class="row">
+                                <div class="input-field col s4">
+                                  <input type="number" id="unitweight">
+                                  <label for="unitweight">Unit Weight</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input type="number" id="totalweight">
+                                  <label for="totalweight">Total Weight</label>
+                                </div>
+                                <div class="input-field col s4">
+                                  <input type="number" id="totalcubicft">
+                                  <label for="totalcubicft">Total Cubic FT.</label>
+                                </div>
+                              </div>
+                              <!-- Comments/Date :) -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <textarea id="comments" class="materialize-textarea"></textarea>
+                                  <label for="comments">Comments</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="text" id="todaydate" class="datepicker">
+                                  <label for="todaydate">Date</label>
+                                </div>
+                              </div>
+                              <!-- Unit Price for Everything Ordered -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="number" step="any" id="unitpriceeverything" class="materialize-textarea"/>
+                                  <label for="unitpriceeverything">Unit Price for Everything Ordered</label>
+                                </div>
+                              </div>
+                              <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                            </form>
+                          </div>
+                        <!-- END FORM 2 (INVOICE) -->
+                      </div>
+                      <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 2 -->
+
+                    <a class="waves-effect waves-light btn modal-trigger oval" href="#modal3">Medicine Details</a>
+                    <!-- START MODAL 3 -->
+                    <div id="modal3" class="modal modal-fixed-footer modal-bigger">
+                      <div class="modal-content">
+                        <!-- START FORM 3 (MEDICINE DETAILS) -->
+                        <h3>Medicine Details Form</h3>
+                          <div class="row">
+                            <form class="col s12">
+                              <!-- medicineDetailsId -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" id="medicineDetailsID">
+                                  <label for="medicineDetailsID">Medicine Details ID</label>
+                                </div>
+                              </div>                             
+                              <!-- Dose Strength/Dosage Form -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="number" id="dosestrength">
+                                  <label for="dosestrength">Dose Strength</label>
+                                </div>
+                                <div class="input-field col s6">
+                                      <select id="dosageform">
+                                      <option value="" disabled selected>Choose your option</option>
+                                      <option value="1">Syrup</option>
+                                      <option value="2">Tablet</option>
+                                      <option value="3">Capsule</option>
+                                    </select>
+                                  <label for="dosageform">Dosage Form</label>
+                                </div>
+                              </div>
+                              <!-- Quantity/Batch Number -->
+                              <div class="row">
+                                <div class="input-field col s6">
+                                  <input type="number" id="qty">
+                                  <label for="qty">Quantity</label>
+                                </div>
+                                <div class="input-field col s6">
+                                  <input type="number" id="batchnumber">
+                                  <label for="batchnumber">Batch Number</label>
+                                </div>
+                              </div>
+                              <!-- Expiry Date :) -->
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" id="expirydate" class="datepicker">
+                                  <label for="expirydate">Expiry Date</label>
+                                </div>
+                              </div>
+                              <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                            </form>
+                          </div>
+                        <!-- END FORM 3 (MEDICINE DETAILS) -->
+                      </div>
+                      <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 3 -->
+
+                    <a class="waves-effect waves-light btn modal-trigger oval" href="#modal4">ISO Certificate</a>
+                    <!-- START MODAL 4 -->
+                    <div id="modal4" class="modal modal-fixed-footer modal">
+                      <div class="modal-content">
+                        <!-- START FORM 4 (ISO CERTIFICATE) -->
+                        <h3>ISO Certificate Form</h3>
+                        <h5>Select the file from a local folder</h5>
+                        {{=form.custom.begin}}
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input type="text" id="isodocumentID">
+                              <label for="isodocumentID">ISO Document ID</label>
+                            </div>
+                          </div>
+                          <div class="file-field input-field">
+                            <div class="btn">
+                              <span>ISO Certificate</span>
+                              <input name="file" type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text">
+                            </div>
+                          </div>
+                          <button class="btn waves-effect waves-light center" type="submit">Upload</button>
+                        {{=form.custom.end}}
+                        <div class="view_iso_certificate">
+                            <button class="btn waves-effect waves-light center" onclick="window.location='{{=URL('download_file')}}';">Download
+                            </button>
+                        </div>
+                        <!-- END FORM 4 (ISO CERTIFICATE) -->
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 4 -->
+                </div>
+              </div>
+              <!-- END MAIN CONTENT -->
+        </div>
+  </body>
+</html>

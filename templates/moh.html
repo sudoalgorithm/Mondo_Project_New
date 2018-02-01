@@ -1,0 +1,752 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/body.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <title>MOH - Blockchain Mondo Project</title>
+    <script type="text/javascript">
+    // For the DatePicker utility from MaterializeCSS :)
+	  $(document).ready(function(){
+	    $('.collapsible').collapsible();
+	  });
+      $(document).ready(function(){
+        $('.datepicker').datepicker({
+          container: 'body'
+        });
+      });
+      $(document).ready(function(){
+        $('select').select();
+      });
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+      $(document).ready(function(){
+        $(".disabled :input").prop("disabled", true);
+      });
+      function toastMe(value)
+      {
+      	if(value=='yes')
+      	{
+			var toastHTML = 'Request Approved';
+      	}
+      	else
+      	{
+      		var toastHTML = 'Request Rejected';
+      	}
+		M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
+		setTimeout(function (){
+			$('#modal1').modal('close');
+		}, 3000);
+      }
+
+      function approve(command, value, index)
+      {
+      	if(value=='yes')
+      	{
+      		var toastHTML = command+' Approved';
+      	}
+      	else
+      	{
+      		var toastHTML = command+ ' Rejected';
+      	}
+      	M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
+      	$('.collapsible').collapsible('close', index);
+      }
+    </script>
+  </head>
+  <body onload='expandToWindow();'>
+    <!-- Page Layout here -->
+      {{include 'default/header.html'}}
+        <div class="col s12 m8 l9">
+              <h2>Ministry of Health - MOH</h2>
+              <!-- START MAIN CONTENT -->
+              <div class="main_content" style="padding-top: 0.679em;">
+                <h3>Network Transactions</h3>
+                <div class="network_content">
+                  <!-- START TABLE -->
+                        <table class="striped centered responsive-table">
+                          <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Transaction ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Dec 10, 2017</td>
+                              <td>01:33:45</td>
+                              <td>8D85F559EC1A56D9E6D80B72F61C22B9BD4939034CDAF88E8E7A13868F24C73E</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 11, 2017</td>
+                              <td>14:25:00</td>
+                              <td>387ECCA8BB2A9C6CDF1EE2781DFAC8C1B6A0715F4B3C7C3A56A9CF8AAF6FEE46</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 25, 2017</td>
+                              <td>05:55:18</td>
+                              <td>65D0E4E72A6799688218FFA5216863173127B07DBA48E45420AA93B5F7762D5A</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  <!-- END TABLE -->
+                  <!-- Can add Pagination if required :) -->
+                </div>
+
+                <h3>Approve</h3>
+                <div class="approve_content center">
+                	<a class="waves-effect waves-light btn modal-trigger oval" href="#modal1">Pre-Import Permit Request</a>
+                    <!-- START MODAL 1 -->
+                    <div id="modal1" class="modal modal-fixed-footer modal">
+                      <div class="modal-content">
+                      <!-- START FORM 1 (PRE IMPORT PERMIT REQUEST) -->
+                      <h3>Pre-Import Permit Request</h3>
+                      <h5>Do you wish to approve or reject this request from WHO?</h5>
+                      <br> <br>
+	                    <div class="row">
+	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-module">Module</a>
+	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-medical">Medical Store Details</a>
+	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-product">Product</a>
+	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-documents">Documents</a>
+	                    </div>
+                      	<div class="row">
+	                        <div class="switch">
+	                          <label>
+	                            Rejected
+	                            <input type="checkbox">
+	                            <span class="lever"></span>
+	                            Approved
+	                          </label>
+	                        </div>
+                      	</div>	       
+                      	<br>             
+	                    <div class="row" style="margin-right: 15em; margin-left: 15em;">
+	                      <form class="col s12">
+	                        <a onclick="toastMe('yes')" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
+	                        <a onclick="toastMe('no')" class="btn-floating btn-large waves-effect waves-light red right"><i class="large material-icons left">cancel</i>Reject</a>
+	                      </form>
+	                    </div>
+                      <!-- END FORM 1 (PRE IMPORT PERMIT REQUEST) -->
+                      </div>
+                      <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 1 -->
+
+                	<a class="waves-effect waves-light btn modal-trigger oval" href="#modal2">Documents</a>
+                    <!-- START MODAL 2 -->
+                    <div id="modal2" class="modal modal-fixed-footer modal-bigger">
+                      <div class="modal-content">
+                      <h3>Documents</h3>
+                      <h5>Approve or reject each document</h5>
+                      		  <ul class="collapsible popout">
+                      		  	<!-- START APPROVE PACKING LIST -->
+							    <li>
+							      <div class="collapsible-header"><h5>Packing List</h5></div>
+							      <div class="collapsible-body">
+			                        <div class="row">
+			                          <form class="col s12">
+			                            <!-- To/From -->
+			                            <div class="row">
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="to">
+			                                <label for="to">To</label>
+			                              </div>
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="from">
+			                                <label for="from">From</label>
+			                              </div>
+			                            </div>
+			                            <!-- Ship Date/Ship VIA -->
+			                            <div class="row">
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="shipdate" class="datepicker">
+			                                <label for="shipdate">Ship Date</label>
+			                              </div>
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="shipvia" class="datepicker">
+			                                <label for="shipvia">Ship VIA</label>
+			                              </div>
+			                            </div>
+			                            <!-- F.O.B. Shipping Point -->
+			                            <div class="row">
+			                              <div class="input-field col s12">
+			                                <input disabled type="text" id="fob">
+			                                <label for="fob">F.O.B. Shipping Point</label>
+			                              </div>
+			                            </div>
+			                            <!-- Account No./Order No. -->
+			                            <div class="row">
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="accountnumber">
+			                                <label for="accountnumber">Account Number</label>
+			                              </div>
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="ordernumber">
+			                                <label for="ordernumber">Order Number</label>
+			                              </div>
+			                            </div>
+			                            <!-- QTY Ordered/QTY Shipped -->
+			                            <div class="row">
+			                              <div class="input-field col s6">
+			                                <input disabled type="number" id="qtyorder">
+			                                <label for="qtyorder">Quantity Ordered</label>
+			                              </div>
+			                              <div class="input-field col s6">
+			                                <input disabled type="number" id="qtyshipped">
+			                                <label for="qtyshipped">Quantity Shipped</label>
+			                              </div>
+			                            </div>
+			                            <!-- PROD. Number -->
+			                            <div class="row">
+			                              <div class="input-field col s12">
+			                                <input disabled type="number" id="prodnumber">
+			                                <label for="prodnumber">PROD. Number</label>
+			                              </div>
+			                            </div>
+			                            <!-- Description -->
+			                            <div class="row">
+			                              <div class="input-field col s12">
+			                                <textarea disabled id="desc" class="materialize-textarea"></textarea>
+			                                <label for="desc">Description</label>
+			                              </div>
+			                            </div>
+			                            <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
+			                            <div class="row">
+			                              <div class="input-field col s4">
+			                                <input disabled type="number" id="unitweight">
+			                                <label for="unitweight">Unit Weight</label>
+			                              </div>
+			                              <div class="input-field col s4">
+			                                <input disabled type="number" id="totalweight">
+			                                <label for="totalweight">Total Weight</label>
+			                              </div>
+			                              <div class="input-field col s4">
+			                                <input disabled type="number" id="totalcubicft">
+			                                <label for="totalcubicft">Total Cubic FT.</label>
+			                              </div>
+			                            </div>
+			                            <!-- Comments/Date :) -->
+			                            <div class="row">
+			                              <div class="input-field col s6">
+			                                <textarea disabled id="comments" class="materialize-textarea"></textarea>
+			                                <label for="comments">Comments</label>
+			                              </div>
+			                              <div class="input-field col s6">
+			                                <input disabled type="text" id="todaydate" class="datepicker">
+			                                <label for="todaydate">Date</label>
+			                              </div>
+			                            </div>
+			                          </form>
+			                        </div>
+					              	<div class="row" style="margin-right: 15em; margin-left: 15em;">
+			                          <form class="col s12">
+			                            <a onclick="approve('Packing List','yes', 0)" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
+			                            <a onclick="approve('Packing List', 'no', 0)" class="btn-floating btn-large waves-effect waves-light red right"><i class="large material-icons left">cancel</i>Reject</a>
+			                          </form>
+			                        </div>
+							      </div>
+							    </li>
+							   	<!-- END APPROVE PACKING LIST -->
+							   	<!-- START APPROVE INVOICE -->
+							    <li>
+							      <div class="collapsible-header"><h5>Invoice</h5></div>
+							      <div class="collapsible-body">
+			                        <div class="row">
+			                            <form class="col s12">
+			                              <!-- To/From -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="to">
+			                                  <label for="to">To</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="from">
+			                                  <label for="from">From</label>
+			                                </div>
+			                              </div>
+			                              <!-- Ship Date/Ship VIA -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="shipdate" class="datepicker">
+			                                  <label for="shipdate">Ship Date</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="shipvia" class="datepicker">
+			                                  <label for="shipvia">Ship VIA</label>
+			                                </div>
+			                              </div>
+			                              <!-- F.O.B. Shipping Point -->
+			                              <div class="row">
+			                                <div class="input-field col s12">
+			                                  <input disabled type="text" id="fob">
+			                                  <label for="fob">F.O.B. Shipping Point</label>
+			                                </div>
+			                              </div>
+			                              <!-- Account No./Order No. -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="accountnumber">
+			                                  <label for="accountnumber">Account Number</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="ordernumber">
+			                                  <label for="ordernumber">Order Number</label>
+			                                </div>
+			                              </div>
+			                              <!-- QTY Ordered/QTY Shipped -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="number" id="qtyorder">
+			                                  <label for="qtyorder">Quantity Ordered</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="number" id="qtyshipped">
+			                                  <label for="qtyshipped">Quantity Shipped</label>
+			                                </div>
+			                              </div>
+			                              <!-- PROD. Number -->
+			                              <div class="row">
+			                                <div class="input-field col s12">
+			                                  <input disabled type="number" id="prodnumber">
+			                                  <label for="prodnumber">PROD. Number</label>
+			                                </div>
+			                              </div>
+			                              <!-- Description -->
+			                              <div class="row">
+			                                <div class="input-field col s12">
+			                                  <textarea disabled id="desc" class="materialize-textarea"></textarea>
+			                                  <label for="desc">Description</label>
+			                                </div>
+			                              </div>
+			                              <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
+			                              <div class="row">
+			                                <div class="input-field col s4">
+			                                  <input disabled type="number" id="unitweight">
+			                                  <label for="unitweight">Unit Weight</label>
+			                                </div>
+			                                <div class="input-field col s4">
+			                                  <input disabled type="number" id="totalweight">
+			                                  <label for="totalweight">Total Weight</label>
+			                                </div>
+			                                <div class="input-field col s4">
+			                                  <input disabled type="number" id="totalcubicft">
+			                                  <label for="totalcubicft">Total Cubic FT.</label>
+			                                </div>
+			                              </div>
+			                              <!-- Comments/Date :) -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <textarea disabled id="comments" class="materialize-textarea"></textarea>
+			                                  <label for="comments">Comments</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="text" id="todaydate" class="datepicker">
+			                                  <label for="todaydate">Date</label>
+			                                </div>
+			                              </div>
+			                            </form>
+			                        </div>
+					              	<div class="row" style="margin-right: 15em; margin-left: 15em;">
+			                          <form class="col s12">
+			                            <a onclick="approve('Invoice','yes',1)" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
+			                            <a onclick="approve('Invoice', 'no',1)" class="btn-floating btn-large waves-effect waves-light red right"><i class="large material-icons left">cancel</i>Reject</a>
+			                          </form>
+			                        </div>
+							      </div>
+							    </li>
+							    <!-- END APPROVE INVOICE -->
+							    <!-- START APPROVE MEDICINE DETAILS -->
+							    <li>
+							      <div class="collapsible-header"><h5>Medicine Details</h5></div>
+							      <div class="collapsible-body">
+			                          <div class="row">
+			                            <form class="col s12">
+			                              <!-- Product Name -->
+			                              <div class="row">
+			                                <div class="input-field col s12">
+			                                  <input disabled type="text" id="productname">
+			                                  <label for="productname">Product Name</label>
+			                                </div>
+			                              </div>
+			                              <!-- Dose Strength/Dosage Form -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="number" id="dosestrength">
+			                                  <label for="dosestrength">Dose Strength</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                      <select disabled id="dosageform">
+			                                      <option selected value="1">Syrup</option>
+			                                      <option value="2">Tablet</option>
+			                                      <option value="3">Capsule</option>
+			                                    </select>
+			                                  <label for="dosageform">Dosage Form</label>
+			                                </div>
+			                              </div>
+			                              <!-- Quantity/Batch Number -->
+			                              <div class="row">
+			                                <div class="input-field col s6">
+			                                  <input disabled type="number" id="qty">
+			                                  <label for="qty">Quantity</label>
+			                                </div>
+			                                <div class="input-field col s6">
+			                                  <input disabled type="number" id="batchnumber">
+			                                  <label for="batchnumber">Batch Number</label>
+			                                </div>
+			                              </div>
+			                              <!-- Expiry Date :) -->
+			                              <div class="row">
+			                                <div class="input-field col s12">
+			                                  <input disabled type="text" id="expirydate" class="datepicker">
+			                                  <label for="expirydate">Expiry Date</label>
+			                                </div>
+			                              </div>
+			                            </form>
+			                          </div>
+					              	<div class="row" style="margin-right: 15em; margin-left: 15em;">
+			                          <form class="col s12">
+			                            <a onclick="approve('Medicine Details','yes', 2)" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
+			                            <a onclick="approve('Medicine Details', 'no', 2)" class="btn-floating btn-large waves-effect waves-light red right"><i class="large material-icons left">cancel</i>Reject</a>
+			                          </form>
+			                        </div>
+							      </div>
+							    </li>
+							    <!-- END APPROVE MEDICINE DETAILS -->
+							    <!-- START APPROVE ISO CERTIFICATE -->
+							  	<li>
+							      <div class="collapsible-header"><h5>ISO Certificate</h5></div>
+							      <div class="collapsible-body">
+							      	    <h4>ISO Certificate</h4>
+							      	    <br><br><br>
+                      					<div class="row" style="margin-right: 15em; margin-left: 15em;">
+				                          <form class="col s12">
+				                            <a onclick="approve('ISO Certificate','yes', 3)" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
+				                            <a onclick="approve('ISO Certificate', 'no', 3)" class="btn-floating btn-large waves-effect waves-light red right"><i class="large material-icons left">cancel</i>Reject</a>
+				                          </form>
+			                        	</div>
+							      </div>
+							    </li>
+							    <!-- END APPROVE ISO CERTIFICATE -->
+							  </ul>
+                      </div>
+                      <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+                      </div>
+                    </div>
+                    <!-- END MODAL 2 -->
+                </div>
+              </div>
+              <!-- END MAIN CONTENT -->
+
+              <!-- INNER MODALS HERE :) \m/ -->
+              <div class="center">
+	                <!-- START Module MODAL -->
+	                <div id="modal-module" class="modal modal-fixed-footer modal">
+	                  <div class="modal-content">
+	                    <!-- Start Module Form-->
+	                    <h3 style="text-align: center;">Module Form</h3>
+	                      <div class="row">
+	                        <form class="col s12 disabled">
+	                          <!-- moduleId -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="moduleID">
+	                              <label for="moduleID">Module ID</label>
+	                            </div>
+	                          </div>                            
+	                          <!-- Type/Import Module -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <input type="text" id="type">
+	                              <label for="type">Type</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <select id="importmodule">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Module 1</option>
+	                                <option value="2">Module 2</option>
+	                                <option value="3">Module 3</option>
+	                              </select>
+	                              <label for="importmodule">Import Module</label>
+	                            </div>
+	                          </div>
+	                        </form>
+	                      </div>
+	                    <!-- End Module Form -->
+	                  </div>
+	                  <div class="modal-footer">
+	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+	                  </div>
+	                </div>
+	                <!-- END Module MODAL -->
+	                <!-- START Medical Store Details MODAL -->
+	                <div id="modal-medical" class="modal modal-fixed-footer modal-bigger">
+	                  <div class="modal-content">
+	                    <!-- Start Module Form-->
+	                    <h3 style="text-align: center;">Medical Store Details Form</h3>
+	                      <div class="row">
+	                        <form class="col s12 disabled">
+	                          <!-- medicalStoreDetailsId -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="medicalStoreDetailsID">
+	                              <label for="medicalStoreDetailsID">Medical Store Details ID</label>
+	                            </div>
+	                          </div>                            
+	                          <!-- MOH License Number -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="number" id="MOHNumber">
+	                              <label for="MOHNumber">MOH License Number</label>
+	                            </div>
+	                          </div>
+	                          <!-- Importer -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="importer">
+	                              <label for="importer">Importer</label>
+	                            </div>
+	                          </div>
+	                          <!-- Country/City -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <input type="text" id="country">
+	                              <label for="country">Country</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <input type="text" id="city">
+	                              <label for="city">City</label>
+	                            </div>
+	                          </div>
+	                          <!-- Address/PO Box -->
+	                          <div class="row">
+	                            <div class="input-field col s8">
+	                              <textarea id="address" class="materialize-textarea"></textarea>
+	                              <label for="address">Address</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <input id="pobox" type="text"/>
+	                              <label for="pobox">PO Box</label>
+	                            </div>
+	                          </div>
+	                          <!-- Phone/Fax -->
+	                          <div class="row">
+	                            <div class="input-field col s8">
+	                              <input id="phone" type="text"/>
+	                              <label for="phone">Phone</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <input id="Fax" type="text"/>
+	                              <label for="fax">Fax</label>
+	                            </div>
+	                          </div>
+	                          <!-- Email/Website -->
+	                          <div class="row">
+	                            <div class="input-field col s8">
+	                              <input id="email" type="email"/>
+	                              <label for="email">Email</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <input id="website" type="text"/>
+	                              <label for="website">Website</label>
+	                            </div>
+	                          </div>
+	                        </form>
+	                      </div>
+	                    <!-- End Module Form -->
+	                  </div>
+	                  <div class="modal-footer">
+	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+	                  </div>
+	                </div>
+	                <!-- END Medical Store Details MODAL -->
+	                <!-- START Product MODAL -->
+	                <div id="modal-product" class="modal modal-fixed-footer modal-bigger">
+	                  <div class="modal-content">
+	                    <!-- Start Module Form-->
+	                    <h3 style="text-align: center;">Product Form</h3>
+	                      <div class="row">
+	                        <form class="col s12 disabled">
+	                          <!-- productId -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="productID">
+	                              <label for="productID">Product ID</label>
+	                            </div>
+	                          </div>                            
+	                          <!-- Register Product/Unregister Product -->
+	                          <div class="row">
+	                              <div class="switch">
+	                                <label>
+	                                  Unregister Product
+	                                  <input type="checkbox">
+	                                  <span class="lever"></span>
+	                                  Register Product
+	                                </label>
+	                              </div>
+	                          </div>
+	                          <!-- Product Class/Product/Product Form -->
+	                          <div class="row">
+	                            <div class="input-field col s4">
+	                              <select id="productclass">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Product Class 1</option>
+	                                <option value="2">Product Class 2</option>
+	                                <option value="3">Product Class 3</option>
+	                              </select>
+	                              <label for="productclass">Product Class</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <select id="product">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Product 1</option>
+	                                <option value="2">Product 2</option>
+	                                <option value="3">Product 3</option>
+	                              </select>
+	                              <label for="product">Product</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <select id="productform">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Product Form 1</option>
+	                                <option value="2">Product Form 2</option>
+	                                <option value="3">Product Form 3</option>
+	                              </select>
+	                              <label for="productform">Product Form</label>
+	                            </div>
+	                          </div>
+	                          <!-- Pack Size/Shelf Life -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <select id="packsize">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Pack Size 1</option>
+	                                <option value="2">Pack Size 2</option>
+	                                <option value="3">Pack Size 3</option>
+	                              </select>
+	                              <label for="packsize">Pack Size</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <input type="text" id="shelflife">
+	                              <label for="shelflife">Shelf Life</label>
+	                            </div>
+	                          </div>
+	                          <!-- Batch Number -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input id="batchnumber" type="number"/>
+	                              <label for="batchnumber">Batch Number</label>
+	                            </div>
+	                          </div>
+	                          <!-- CIF Unit Price/Invoice Unit Price/Quantity -->
+	                          <div class="row">
+	                            <div class="input-field col s4">
+	                              <input id="cifuprice" type="number" step="any"/>
+	                              <label for="cifuprice">CIF Unit Price</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <input id="invoiceuprice" type="number" step="any"/>
+	                              <label for="invoiceuprice">Invoice Unit Price</label>
+	                            </div>
+	                            <div class="input-field col s4">
+	                              <input id="quantity" type="number"/>
+	                              <label for="quantity">Quantity</label>
+	                            </div>
+	                          </div>
+	                          <!-- Batch Manufacturing Date/Batch Expiry Date -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <input id="batchmanufdate" type="text" class="datepicker"/>
+	                              <label for="batchmanufdate">Batch Manufacturing Date</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <input id="batchexpdate" type="text" class="datepicker"/>
+	                              <label for="batchexpdate">Batch Expiry Date</label>
+	                            </div>
+	                          </div>
+	                          <!-- Manufacturer/Country of Origin -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <select id="manufacturer">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Manufacturer 1</option>
+	                                <option value="2">Manufacturer 2</option>
+	                                <option value="3">Manufacturer 3</option>
+	                              </select>
+	                              <label for="manufacturer">Manufacturer</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <input id="countryoforigin" type="text"/>
+	                              <label for="countryoforigin">Country of Origin</label>
+	                            </div>
+	                          </div>
+	                        </form>
+	                      </div>
+	                    <!-- End Module Form -->
+	                  </div>
+	                  <div class="modal-footer">
+	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+	                  </div>
+	                </div>
+	                <!-- END Product MODAL -->
+	                <!-- START Documents MODAL -->
+	                <div id="modal-documents" class="modal modal-fixed-footer modal-bigger">
+	                  <div class="modal-content">
+	                    <!-- Start Module Form-->
+	                    <h3 style="text-align: center;">Documents Form</h3>
+	                      <div class="row disabled">
+	                        <form class="col s12">
+	                          <!-- documentId -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="documentID">
+	                              <label for="documentID">Document ID</label>
+	                            </div>
+	                          </div>                            
+	                          <!-- Document Name -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="documentName">
+	                              <label for="documentName">Document Name</label>
+	                            </div>
+	                          </div>   
+	                          <!-- Document Type -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="documentType">
+	                              <label for="documentType">Document Type</label>
+	                            </div>
+	                          </div> 
+	                          <!-- Document Hash/Uploads -->
+	                          <div class="row">
+	                            <div class="file-field input-field">
+	                              <div class="btn">
+	                                <span>Documents</span>
+	                                <input name="file" type="file" multiple>
+	                              </div>
+	                              <div class="file-path-wrapper">
+	                                <input class="file-path validate" type="text">
+	                              </div>
+	                            </div>
+	                          </div>
+	                        </form>
+	                      </div>
+	                    <!-- End Module Form -->
+	                  </div>
+	                  <div class="modal-footer">
+	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+	                  </div>
+	                </div>
+	                <!-- END Documents MODAL -->
+              </div>
+        </div>
+      </div>
+  </body>
+</html>

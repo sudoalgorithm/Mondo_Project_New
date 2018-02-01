@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "myfont";
+    src: url("DubaiW23-Regular.woff") format('woff');
+}
+
+body {
+	/*font-family: 'Alegreya', serif;*/
+	font-family: myfont, serif;
+    overflow-x: hidden;
+}
+
+.circle-text {
+	display: table-cell;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 50%;
+	background: #000;
+	color: #fff;
+	font-size: 23px;
+}
+
+#welcome_icons {
+	padding: 20;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.content {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.border {
+	border: thin solid black;
+}
+
+.modal {
+	max-height: 120%;
+	/*width: 70%;*/
+}
+
+.modal-bigger {
+	width: 80%;
+	height: 85% !important;
+}
+
+.modal-smaller {
+	height: 61% !important;
+}
+
+.oval {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50px; /*50px vs. 50%*/
+}

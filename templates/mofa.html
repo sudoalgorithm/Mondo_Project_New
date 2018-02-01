@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/body.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    <title>MoFA - Blockchain Mondo Project</title>
+    <script type="text/javascript">
+    // For the DatePicker utility from MaterializeCSS :)
+      $(document).ready(function(){
+        $('.collapsible').collapsible();
+      });
+      $(document).ready(function(){
+        $('.datepicker').datepicker({
+          container: 'body'
+        });
+      });
+      $(document).ready(function(){
+        $('select').select();
+      });
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+
+      function toastMe(value)
+      {
+        if(value=='yes')
+        {
+      var toastHTML = 'Request Approved';
+        }
+        else
+        {
+          var toastHTML = 'Request Rejected';
+        }
+        M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
+        setTimeout(function (){
+          $('#modal1').modal('close');
+        }, 3000);
+      }
+
+      function approve(command, value, index)
+      {
+        if(value=='yes')
+        {
+          var toastHTML = command+' Approved';
+        }
+        else
+        {
+          var toastHTML = command+ ' Rejected';
+        }
+        M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
+        $('.collapsible').collapsible('close', index);
+      }
+    </script>
+  </head>
+  <body onload='expandToWindow();'>
+    <!-- Page Layout here -->
+      {{include 'default/header.html'}}
+        <div class="col s12 m8 l9">
+              <h2>Ministry of Foreign Affairs - MoFA</h2>
+              <!-- START MAIN CONTENT -->
+              <div class="main_content" style="padding-top: 0.679em;">
+
+                <h3>Network Transactions</h3>
+                <div class="network_content">
+                  <!-- START TABLE -->
+                        <table class="striped centered responsive-table">
+                          <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Transaction ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Dec 10, 2017</td>
+                              <td>01:33:45</td>
+                              <td>8D85F559EC1A56D9E6D80B72F61C22B9BD4939034CDAF88E8E7A13868F24C73E</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 11, 2017</td>
+                              <td>14:25:00</td>
+                              <td>387ECCA8BB2A9C6CDF1EE2781DFAC8C1B6A0715F4B3C7C3A56A9CF8AAF6FEE46</td>
+                            </tr>
+                            <tr>
+                              <td>Dec 25, 2017</td>
+                              <td>05:55:18</td>
+                              <td>65D0E4E72A6799688218FFA5216863173127B07DBA48E45420AA93B5F7762D5A</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  <!-- END TABLE -->
+                  <!-- Can add Pagination if required :) -->
+                </div>
+
+                <h3>Approve</h3>
+                <div class="approve_content center">
+                </div>
+              </div>
+              <!-- END MAIN CONTENT -->
+        </div>
+      </div>
+  </body>
+</html>
