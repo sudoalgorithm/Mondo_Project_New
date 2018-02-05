@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
     <title>Forwarding Agent - Blockchain Mondo Project</title>
-    <script type="text/javascript" src="{{url_for('static', filename='javascript/fa.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/fa.js') }}"></script>
   </head>
   <body onload='expandToWindow();' >
     <!-- Page Layout here -->
@@ -352,44 +352,6 @@
                       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
                       </div>
                     </div>
-                    <!-- END MODAL 3 -->
-
-                    <a class="waves-effect waves-light btn modal-trigger oval" href="#modal4">ISO Certificate</a>
-                    <!-- START MODAL 4 -->
-                    <div id="modal4" class="modal modal-fixed-footer modal">
-                      <div class="modal-content">
-                        <!-- START FORM 4 (ISO CERTIFICATE) -->
-                        <h3>ISO Certificate Form</h3>
-                        <h5>Select the file from a local folder</h5>
-                        {{=form.custom.begin}}
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input type="text" id="isodocumentID">
-                              <label for="isodocumentID">ISO Document ID</label>
-                            </div>
-                          </div>
-                          <div class="file-field input-field">
-                            <div class="btn">
-                              <span>ISO Certificate</span>
-                              <input name="file" type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                              <input class="file-path validate" type="text">
-                            </div>
-                          </div>
-                          <button class="btn waves-effect waves-light center" type="submit">Upload</button>
-                        {{=form.custom.end}}
-                        <div class="view_iso_certificate">
-                            <button class="btn waves-effect waves-light center" onclick="window.location='{{=URL('download_file')}}';">Download
-                            </button>
-                        </div>
-                        <!-- END FORM 4 (ISO CERTIFICATE) -->
-                      </div>
-                      <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
-                      </div>
-                    </div>
-                    <!-- END MODAL 4 -->
                 </div>
               </div>
               <!-- END MAIN CONTENT -->
