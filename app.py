@@ -36,7 +36,7 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/action')
+@app.route('/actionPA')
 def packinglist():
 	json = {
 		"$class": "org.acme.mondo.PackingList",
@@ -58,8 +58,33 @@ def packinglist():
 		"comments": "string",
 		"date": "string"
 	}
-	response = requests.post('http://localhost:3000/api/PackingList', json)
-	print(response)
+	response = requests.post('http://localhost:3000/api/PackingList', json=json)
+
+@app.route('/actionInvoice')
+def invoice():
+	json = {
+		"$class": "org.acme.mondo.Invoice",
+		"invoiceId": "123",
+		"to": "string",
+		"from": "string",
+		"shipDate": "string",
+		"FOBShippingPoint": "string",
+		"accountNumber": 0,
+		"orderNumber": 0,
+		"department": "string",
+		"termsNoAnticipation": "string",
+		"quantityOrdered": 0,
+		"quantityShipped": 0,
+		"description": "string",
+		"unitWeight": 0,
+		"totalWeight": 0,
+		"totalCubicFeet": 0,
+		"comments": "string",
+		"date": "string",
+		"unitPriceForEverythingOrdered": 0
+	}
+	response = requests.post('http://localhost:3000/api/Invoice', json=json)
+
 
 if __name__ == '__main__':
 	app.debug = True
