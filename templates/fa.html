@@ -60,7 +60,7 @@
                       <!-- START FORM 1 (PACKING LIST) -->
                       <h3>Packing List Form</h3>
                         <div class="row">
-                          <form class="col s12">
+                          <form class="col s12" action="/packingList" method="post">
                             <!-- packingListId -->
                             <div class="row">
                               <div class="input-field col s12">
@@ -159,7 +159,7 @@
                                 <label for="todaydate">Date</label>
                               </div>
                             </div>
-                            <button class="btn waves-effect waves-light center" type="submit" name="actionPA" onclick="packinglist()">Submit</button>
+                            <button class="btn waves-effect waves-light center" type="submit" name="actionPA">Submit</button>
                           </form>
                         </div>
                       <!-- END FORM 1 (PACKING LIST) -->
@@ -177,7 +177,7 @@
                         <!-- START FORM 2 (INVOICE) -->
                         <h3>Invoice Form</h3>
                           <div class="row">
-                            <form class="col s12">
+                            <form class="col s12" action="/invoice" method="post">
                               <!-- invoiceId -->
                               <div class="row">
                                 <div class="input-field col s12">

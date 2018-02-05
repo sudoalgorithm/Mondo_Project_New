@@ -36,7 +36,7 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/actionPA', methods=['POST'])
+@app.route('/packingList', methods=['POST'])
 def packinglist():
 	jsonPA = {
 		"$class": "org.acme.mondo.PackingList",
@@ -61,7 +61,7 @@ def packinglist():
 	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
 	return response.text
 
-@app.route('/actionInvoice', methods=['POST'])
+@app.route('/invoice', methods=['POST'])
 def invoice():
 	jsonInvoice = {
 		"$class": "org.acme.mondo.Invoice",
