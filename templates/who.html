@@ -8,24 +8,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
     <title>WHO - Blockchain Mondo Project</title>
-    <script type="text/javascript">
-    // For the DatePicker utility from MaterializeCSS :)
-      $(document).ready(function(){
-        $('.datepicker').datepicker({
-          container: 'body'
-        });
-      });
-      $(document).ready(function(){
-        $('select').select();
-      });
-      $(document).ready(function(){
-        $('.modal').modal();
-      });
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/who.js')}}"></script>
   </head>
   <body onload='expandToWindow();' >
     <!-- Page Layout here -->
-      {{include 'default/header.html'}}
+    {% include 'header.html' %}
         <div class="col s12 m8 l9">
               <h2>World Health Organization - WHO</h2>
               <!-- START MAIN CONTENT -->

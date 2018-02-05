@@ -8,59 +8,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
     <title>MOH - Blockchain Mondo Project</title>
-    <script type="text/javascript">
-    // For the DatePicker utility from MaterializeCSS :)
-	  $(document).ready(function(){
-	    $('.collapsible').collapsible();
-	  });
-      $(document).ready(function(){
-        $('.datepicker').datepicker({
-          container: 'body'
-        });
-      });
-      $(document).ready(function(){
-        $('select').select();
-      });
-      $(document).ready(function(){
-        $('.modal').modal();
-      });
-      $(document).ready(function(){
-        $(".disabled :input").prop("disabled", true);
-      });
-      function toastMe(value)
-      {
-      	if(value=='yes')
-      	{
-			var toastHTML = 'Request Approved';
-      	}
-      	else
-      	{
-      		var toastHTML = 'Request Rejected';
-      	}
-		M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
-		setTimeout(function (){
-			$('#modal1').modal('close');
-		}, 3000);
-      }
-
-      function approve(command, value, index)
-      {
-      	if(value=='yes')
-      	{
-      		var toastHTML = command+' Approved';
-      	}
-      	else
-      	{
-      		var toastHTML = command+ ' Rejected';
-      	}
-      	M.toast({html: toastHTML, classes: 'rounded',displayLength: 3000});
-      	$('.collapsible').collapsible('close', index);
-      }
-    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/moh.js')}}"></script>
   </head>
   <body onload='expandToWindow();'>
     <!-- Page Layout here -->
-      {{include 'default/header.html'}}
+		{% include 'header.html' %}
         <div class="col s12 m8 l9">
               <h2>Ministry of Health - MOH</h2>
               <!-- START MAIN CONTENT -->
