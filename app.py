@@ -38,7 +38,7 @@ def who():
 
 @app.route('/actionPA')
 def packinglist():
-	json = {
+	jsonPA = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": "123",
 		"to": "string",
@@ -58,12 +58,12 @@ def packinglist():
 		"comments": "string",
 		"date": "string"
 	}
-	response = requests.post('http://localhost:3000/api/PackingList', json=json)
-	return response
+	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
+	print response.text
 
 @app.route('/actionInvoice')
 def invoice():
-	json = {
+	jsonInvoice = {
 		"$class": "org.acme.mondo.Invoice",
 		"invoiceId": "123",
 		"to": "string",
@@ -84,8 +84,8 @@ def invoice():
 		"date": "string",
 		"unitPriceForEverythingOrdered": 0
 	}
-	response = requests.post('http://localhost:3000/api/Invoice', json=json)
-	return response
+	response = requests.post('http://localhost:3000/api/Invoice', params=jsonInvoice)
+	print response.text
 
 
 if __name__ == '__main__':
