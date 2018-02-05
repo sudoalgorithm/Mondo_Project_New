@@ -59,7 +59,7 @@ def packinglist():
 		"date": "string"
 	}
 	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
-	print response.text
+	return response.text
 
 @app.route('/actionInvoice')
 def invoice():
@@ -85,7 +85,7 @@ def invoice():
 		"unitPriceForEverythingOrdered": 0
 	}
 	response = requests.post('http://localhost:3000/api/Invoice', params=jsonInvoice)
-	print response.text
+	return response.text
 
 
 if __name__ == '__main__':
