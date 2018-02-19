@@ -159,7 +159,7 @@
                                 <label for="todaydate">Date</label>
                               </div>
                             </div>
-                            <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                            <button class="btn waves-effect waves-light center" type="submit" onclick="plsubmit">Submit</button>
                           </form>
                         </div>
                       <!-- END FORM 1 (PACKING LIST) -->
@@ -188,102 +188,102 @@
                               <!-- To/From -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" id="to">
-                                  <label for="to">To</label>
+                                  <input type="text" id="toif">
+                                  <label for="toif">To</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="from">
-                                  <label for="from">From</label>
+                                  <input type="text" id="fromif">
+                                  <label for="fromif">From</label>
                                 </div>
                               </div>
                               <!-- Ship Date -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="shipdate" class="datepicker">
-                                  <label for="shipdate">Ship Date</label>
+                                  <input type="text" id="shipdateif" class="datepicker">
+                                  <label for="shipdateif">Ship Date</label>
                                 </div>
                               </div>
                               <!-- F.O.B. Shipping Point -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="fob">
-                                  <label for="fob">F.O.B. Shipping Point</label>
+                                  <input type="text" id="fobif">
+                                  <label for="fobif">F.O.B. Shipping Point</label>
                                 </div>
                               </div>
                               <!-- Account No./Order No. -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" id="accountnumber">
-                                  <label for="accountnumber">Account Number</label>
+                                  <input type="text" id="accountnumberif">
+                                  <label for="accountnumberif">Account Number</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="ordernumber">
-                                  <label for="ordernumber">Order Number</label>
+                                  <input type="text" id="ordernumberif">
+                                  <label for="ordernumberif">Order Number</label>
                                 </div>
                               </div>
                               <!-- Department/Terms -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" id="department">
-                                  <label for="department">Department</label>
+                                  <input type="text" id="departmentif">
+                                  <label for="departmentif">Department</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="terms">
-                                  <label for="terms">Terms - No Anticipation</label>
+                                  <input type="text" id="termsif">
+                                  <label for="termsif">Terms - No Anticipation</label>
                                 </div>                           
                               </div>
                               <!-- QTY Ordered/QTY Shipped -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="number" id="qtyorder">
-                                  <label for="qtyorder">Quantity Ordered</label>
+                                  <input type="number" id="qtyorderif">
+                                  <label for="qtyorderif">Quantity Ordered</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="number" id="qtyshipped">
-                                  <label for="qtyshipped">Quantity Shipped</label>
+                                  <input type="number" id="qtyshippedif">
+                                  <label for="qtyshippedif">Quantity Shipped</label>
                                 </div>
                               </div>
                               <!-- Description -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <textarea id="desc" class="materialize-textarea"></textarea>
-                                  <label for="desc">Description</label>
+                                  <textarea id="descif" class="materialize-textarea"></textarea>
+                                  <label for="descif">Description</label>
                                 </div>
                               </div>
                               <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
                               <div class="row">
                                 <div class="input-field col s4">
-                                  <input type="number" id="unitweight">
-                                  <label for="unitweight">Unit Weight</label>
+                                  <input type="number" id="unitweightif">
+                                  <label for="unitweightif">Unit Weight</label>
                                 </div>
                                 <div class="input-field col s4">
-                                  <input type="number" id="totalweight">
-                                  <label for="totalweight">Total Weight</label>
+                                  <input type="number" id="totalweightif">
+                                  <label for="totalweightif">Total Weight</label>
                                 </div>
                                 <div class="input-field col s4">
-                                  <input type="number" id="totalcubicft">
-                                  <label for="totalcubicft">Total Cubic FT.</label>
+                                  <input type="number" id="totalcubicftif">
+                                  <label for="totalcubicftif">Total Cubic FT.</label>
                                 </div>
                               </div>
                               <!-- Comments/Date :) -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <textarea id="comments" class="materialize-textarea"></textarea>
-                                  <label for="comments">Comments</label>
+                                  <textarea id="commentsif" class="materialize-textarea"></textarea>
+                                  <label for="commentsif">Comments</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="todaydate" class="datepicker">
-                                  <label for="todaydate">Date</label>
+                                  <input type="text" id="todaydateif" class="datepicker">
+                                  <label for="todaydateif">Date</label>
                                 </div>
                               </div>
                               <!-- Unit Price for Everything Ordered -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" step="any" id="unitpriceeverything" class="materialize-textarea"/>
-                                  <label for="unitpriceeverything">Unit Price for Everything Ordered</label>
+                                  <input type="number" step="any" id="unitpriceeverythingif" class="materialize-textarea"/>
+                                  <label for="unitpriceeverythingif">Unit Price for Everything Ordered</label>
                                 </div>
                               </div>
-                              <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                              <button class="btn waves-effect waves-light center" type="submit" onclick="ifsubmit">Submit</button>
                             </form>
                           </div>
                         <!-- END FORM 2 (INVOICE) -->
@@ -327,23 +327,12 @@
                               </div>
                               <!-- Quantity/Batch Number -->
                               <div class="row">
-                                <div class="input-field col s6">
+                                <div class="input-field col s12">
                                   <input type="number" id="qty">
                                   <label for="qty">Quantity</label>
                                 </div>
-                                <div class="input-field col s6">
-                                  <input type="number" id="batchnumber">
-                                  <label for="batchnumber">Batch Number</label>
-                                </div>
                               </div>
-                              <!-- Expiry Date :) -->
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input type="text" id="expirydate" class="datepicker">
-                                  <label for="expirydate">Expiry Date</label>
-                                </div>
-                              </div>
-                              <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                              <button class="btn waves-effect waves-light center" type="submit" onclick="mdsubmit">Submit</button>
                             </form>
                           </div>
                         <!-- END FORM 3 (MEDICINE DETAILS) -->
