@@ -36,6 +36,7 @@ def moh():
 def who():
 	return render_template('who.html')
 
+@app.route('/packingList', methods=['POST'])
 def packinglist():
 	packingListId = request.form['packingListID']
 	sender = request.form['to']
@@ -54,7 +55,8 @@ def packinglist():
 	totalcubicft = request.form['totalcubicft']
 	comment = request.form['comment']
 	todaydate = request.form['todaydate']
-	jsonPA = {
+	url = 'http://localhost:3000/api/PackingList'
+	payload = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
 		"to": sender,
@@ -74,9 +76,9 @@ def packinglist():
 		"comments": comment,
 		"date": todaydate
 	}
-	if request.method == 'POST':
-		response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
-		return response.get_json()
+	header = {'content-type': 'application/json'}
+	response = requests.post(url,data=json.dumps(payload), headers=header)
+	return response.get_json()
 
 
 @app.route('/invoice', methods=['POST'])
