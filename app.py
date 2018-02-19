@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, jsonify
 import requests
 import os
 
@@ -36,7 +36,6 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/packingList', methods=['POST'])
 def packinglist():
 	packingListId = request.form['packingListID']
 	sender = request.form['to']
@@ -75,8 +74,10 @@ def packinglist():
 		"comments": comment,
 		"date": todaydate
 	}
-	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
-	return response.text
+	if request.method == 'POST':
+		response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
+		return response.get_json()
+
 
 @app.route('/invoice', methods=['POST'])
 def invoice():
