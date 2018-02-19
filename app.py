@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for
 import requests
 import os
 
+
 app = Flask(__name__)
 
 @app.route('/')
