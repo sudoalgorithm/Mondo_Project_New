@@ -55,7 +55,6 @@ def packinglist():
 	totalcubicft = request.form['totalcubicft']
 	comment = request.form['comment']
 	todaydate = request.form['todaydate']
-	url = 'http://localhost:3000/api/PackingList'
 	payload = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
@@ -76,8 +75,9 @@ def packinglist():
 		"comments": comment,
 		"date": todaydate
 	}
+	url = 'http://localhost:3000/api/PackingList'
 	header = {'content-type': 'application/json'}
-	response = requests.post(url,data=json.dumps(payload), headers=header)
+	response = requests.post(url,jsonify(payload), headers=header)
 	return response.get_json()
 
 
