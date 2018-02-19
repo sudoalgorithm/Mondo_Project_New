@@ -60,7 +60,7 @@
                       <!-- START FORM 1 (PACKING LIST) -->
                       <h3>Packing List Form</h3>
                         <div class="row">
-                          <form class="col s12">
+                          <form class="col s12" action="{{ url_for('packingList') }}" method="['POST']">
                             <!-- packingListId -->
                             <div class="row">
                               <div class="input-field col s12">
@@ -71,95 +71,95 @@
                             <!-- To/From -->
                             <div class="row">
                               <div class="input-field col s6">
-                                <input type="text" id="to">
+                                <input type="text" id="to" name="to">
                                 <label for="to">To</label>
                               </div>
                               <div class="input-field col s6">
-                                <input type="text" id="from">
+                                <input type="text" id="from" name="from">
                                 <label for="from">From</label>
                               </div>
                             </div>
                             <!-- Ship Date-->
                             <div class="row">
                               <div class="input-field col s12">
-                                <input type="text" id="shipdate" class="datepicker">
+                                <input type="text" id="shipdate" class="datepicker" name="shipdate">
                                 <label for="shipdate">Ship Date</label>
                               </div>
                             </div>
                             <!-- F.O.B. Shipping Point -->
                             <div class="row">
                               <div class="input-field col s12">
-                                <input type="text" id="fob">
+                                <input type="text" id="fob" name="fob">
                                 <label for="fob">F.O.B. Shipping Point</label>
                               </div>
                             </div>
                             <!-- Account No./Order No. -->
                             <div class="row">
                               <div class="input-field col s6">
-                                <input type="text" id="accountnumber">
+                                <input type="text" id="accountnumber" name="accountnumber">
                                 <label for="accountnumber">Account Number</label>
                               </div>
                               <div class="input-field col s6">
-                                <input type="text" id="ordernumber">
+                                <input type="text" id="ordernumber" name="ordernumber">
                                 <label for="ordernumber">Order Number</label>
                               </div>
                             </div>
                             <!-- Department/Terms - No Anticipation -->
                             <div class="row">
                               <div class="input-field col s6">
-                                <input type="text" id="department">
+                                <input type="text" id="department" name="department">
                                 <label for="department">Department</label>
                               </div>
                               <div class="input-field col s6">
-                                <input type="text" id="terms">
+                                <input type="text" id="terms" name="terms">
                                 <label for="terms">Terms - No Anticipation</label>
                               </div>
                             </div>
                             <!-- QTY Ordered/QTY Shipped -->
                             <div class="row">
                               <div class="input-field col s6">
-                                <input type="number" id="qtyorder">
+                                <input type="number" id="qtyorder" name="qtyorder">
                                 <label for="qtyorder">Quantity Ordered</label>
                               </div>
                               <div class="input-field col s6">
-                                <input type="number" id="qtyshipped">
+                                <input type="number" id="qtyshipped" name="qtyshipped">
                                 <label for="qtyshipped">Quantity Shipped</label>
                               </div>
                             </div>
                             <!-- Description -->
                             <div class="row">
                               <div class="input-field col s12">
-                                <textarea id="desc" class="materialize-textarea"></textarea>
+                                <textarea id="desc" class="materialize-textarea" name="description"></textarea>
                                 <label for="desc">Description</label>
                               </div>
                             </div>
                             <!-- Unit Weight/Total Weight/Total Cubic Ft. -->
                             <div class="row">
                               <div class="input-field col s4">
-                                <input type="number" id="unitweight">
+                                <input type="number" id="unitweight" name="unitweight">
                                 <label for="unitweight">Unit Weight</label>
                               </div>
                               <div class="input-field col s4">
-                                <input type="number" id="totalweight">
+                                <input type="number" id="totalweight" name="totalweight">
                                 <label for="totalweight">Total Weight</label>
                               </div>
                               <div class="input-field col s4">
-                                <input type="number" id="totalcubicft">
+                                <input type="number" id="totalcubicft" name="totalcubicft">
                                 <label for="totalcubicft">Total Cubic FT.</label>
                               </div>
                             </div>
                             <!-- Comments/Date :) -->
                             <div class="row">
                               <div class="input-field col s6">
-                                <textarea id="comments" class="materialize-textarea"></textarea>
+                                <textarea id="comments" class="materialize-textarea" name="comment"></textarea>
                                 <label for="comments">Comments</label>
                               </div>
                               <div class="input-field col s6">
-                                <input type="text" id="todaydate" class="datepicker">
+                                <input type="text" id="todaydate" class="datepicker" name="todaydate">
                                 <label for="todaydate">Date</label>
                               </div>
                             </div>
-                            <button class="btn waves-effect waves-light center" type="submit" onclick="plsubmit">Submit</button>
+                            <button class="btn waves-effect waves-light center" type="submit">Submit</button>
                           </form>
                         </div>
                       <!-- END FORM 1 (PACKING LIST) -->

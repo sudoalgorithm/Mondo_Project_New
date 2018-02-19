@@ -10,50 +10,7 @@ $(document).ready(function(){
     $('.modal').modal();
   });
 
-  function plsubmit(){
-    var packingListID = document.getElementById("packingListID").value;
-    var sender = document.getElementById("to").value;
-    var receiver = document.getElementById("from").value;
-    var shipDate = document.getElementById("shipdate").value;
-    var shippingPoint = document.getElementById("fob").value;
-    var accountNumber = document.getElementById("accountnumber").value;
-    var orderNumber = document.getElementById("ordernumber").value;
-    var department = document.getElementById("department").value;
-    var terms = document.getElementById("terms").value;
-    var quantityOrdered = document.getElementById("qtyorder").value;
-    var quantityShipped = document.getElementById("qtyshipped").value;
-    var description = document.getElementById("desc").value;
-    var unitWeight = document.getElementById("unitweight").value;
-    var totalWeight = document.getElementById("totalweight").value;
-    var totalCubicFT = document.getElementById("totalcubicft").value;
-    var comments = document.getElementById("comments").value;
-    var date = document.getElementById("todaydate").value;
-    var datapl = {
-      "$class": "org.acme.mondo.PackingList",
-      "packingListId": packingListID,
-      "to": sender,
-      "from": receiver,
-      "shipDate": shipDate,
-      "FOBShippingPoint": shippingPoint,
-      "accountNumber": accountNumber,
-      "orderNumber": orderNumber,
-      "department": department,
-      "termsNoAnticipation": terms,
-      "quantityOrdered": quantityOrdered,
-      "quantityShipped": quantityShipped,
-      "description": description,
-      "unitWeight": unitWeight,
-      "totalWeight": totalWeight,
-      "totalCubicFeet": totalCubicFT,
-      "comments": comments,
-      "date": date
-    }
-    
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST","http://localhost:3000/api/PackingList", true);
-    xhttp.setRequestHeader("Content-type","application/json");
-    xhttp.send(JSON.stringify(datapl));
-  }
+
 
   function ifsubmit(){
     var invoiceID = document.getElementById("invoiceID").value;
