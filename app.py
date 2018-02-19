@@ -36,7 +36,7 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/packingList', methods=['POST'])
+@app.route('/packingList', methods=['GET','POST'])
 def packinglist():
 	packingListId = request.form['packingListID']
 	sender = request.form['to']
@@ -77,7 +77,7 @@ def packinglist():
 	}
 	url = 'http://localhost:3000/api/PackingList'
 	header = {'content-type': 'application/json'}
-	response = requests.post(url,jsonify(payload), headers=header)
+	response = requests.post(url,json=payload, headers=header)
 	return response.get_json()
 
 
