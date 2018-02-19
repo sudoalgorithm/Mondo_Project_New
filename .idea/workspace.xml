@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="447e21b7-be1f-414d-a933-8411c834a047" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change beforePath="$PROJECT_DIR$/static/javascript/fa.js" afterPath="$PROJECT_DIR$/static/javascript/fa.js" />
-      <change beforePath="$PROJECT_DIR$/templates/fa.html" afterPath="$PROJECT_DIR$/templates/fa.html" />
-    </list>
+    <list default="true" id="447e21b7-be1f-414d-a933-8411c834a047" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/templates/fa.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="548">
-              <caret line="341" column="67" lean-forward="false" selection-start-line="341" selection-start-column="57" selection-end-line="341" selection-end-column="67" />
+              <caret line="332" column="38" lean-forward="false" selection-start-line="332" selection-start-column="38" selection-end-line="332" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -177,7 +173,7 @@
     <entry file="file://$PROJECT_DIR$/templates/fa.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
-          <caret line="341" column="67" lean-forward="false" selection-start-line="341" selection-start-column="57" selection-end-line="341" selection-end-column="67" />
+          <caret line="332" column="38" lean-forward="false" selection-start-line="332" selection-start-column="38" selection-end-line="332" selection-end-column="38" />
           <folding />
         </state>
       </provider>
