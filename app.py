@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, jsonify
+from flask import Flask, render_template, url_for, request, jsonify, redirect
 import requests
 import os
 
@@ -36,7 +36,7 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/packingList', methods=['GET','POST'])
+@app.route('/packingList', methods=['POST'])
 def packinglist():
 	packingListId = request.form['packingListID']
 	sender = request.form['to']
@@ -55,7 +55,7 @@ def packinglist():
 	totalcubicft = request.form['totalcubicft']
 	comment = request.form['comment']
 	todaydate = request.form['todaydate']
-	payload = {
+	jsonPA = jsonify({
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
 		"to": sender,
@@ -74,11 +74,11 @@ def packinglist():
 		"totalCubicFeet": totalcubicft,
 		"comments": comment,
 		"date": todaydate
-	}
+	})
 	url = 'http://localhost:3000/api/PackingList'
-	header = {'content-type': 'application/json'}
-	response = requests.post(url,json=payload, headers=header)
-	return response.get_json()
+	responsePA = requests.post(url,json=jsonPA)
+	responsePA.json
+	return redirect(url_for('fa'))
 
 
 @app.route('/invoice', methods=['POST'])
@@ -104,7 +104,7 @@ def invoice():
 		"date": "string",
 		"unitPriceForEverythingOrdered": 0
 	}
-	response = requests.post('http://localhost:3000/api/Invoice', params=jsonInvoice)
+	response = requests.post('http://localhost:3000/api/Invoice', json=jsonInvoice)
 	return response.text
 
 @app.route('/medicineDetails', methods=['POST'])
