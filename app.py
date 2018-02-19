@@ -38,6 +38,7 @@ def who():
 
 @app.route('/packingList', methods=['POST'])
 def packinglist():
+	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
 	jsonPA = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": "123",
@@ -58,7 +59,6 @@ def packinglist():
 		"comments": "string",
 		"date": "string"
 	}
-	response = requests.post('http://localhost:3000/api/PackingList', params=jsonPA)
 	return response.text
 
 @app.route('/invoice', methods=['POST'])
@@ -85,6 +85,30 @@ def invoice():
 		"unitPriceForEverythingOrdered": 0
 	}
 	response = requests.post('http://localhost:3000/api/Invoice', params=jsonInvoice)
+	return response.text
+
+@app.route('/medicineDetails', methods=['POST'])
+def medicineDetails():
+	jsonMedicineDetails = {
+		"$class": "org.acme.mondo.MedicineDetails",
+		"medicineDetailsId": "string",
+		"doseStrength": 0,
+		"dosageForm": "string",
+		"quantity": 0
+	}
+	response = requests.post('http://localhost:3000/api/MedicineDetails', params=jsonMedicineDetails)
+	return response.text
+
+@app.route('/InitiateImportProcess', methods=['POST'])
+def initiateImportProcess():
+	jsonImportProcess = {
+		 "$class": "org.acme.mondo.InitiateImportProcess",
+    	"packingList": "resource:org.acme.mondo.PackingList#123",
+    	"invoice": "resource:org.acme.mondo.Invoice#123",
+    	"medicineDetails": "resource:org.acme.mondo.MedicineDetails#123",
+    	"ISODocument": "resource:org.acme.mondo.ISODocument#123"
+	}
+	response = requests.post('http://localhost:3000/api/InitiateImportProcess', params=jsonImportProcess)
 	return response.text
 
 

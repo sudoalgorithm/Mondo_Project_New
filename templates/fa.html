@@ -31,19 +31,19 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Dec 10, 2017</td>
-                              <td>01:33:45</td>
-                              <td>8D85F559EC1A56D9E6D80B72F61C22B9BD4939034CDAF88E8E7A13868F24C73E</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
                             </tr>
                             <tr>
-                              <td>Dec 11, 2017</td>
-                              <td>14:25:00</td>
-                              <td>387ECCA8BB2A9C6CDF1EE2781DFAC8C1B6A0715F4B3C7C3A56A9CF8AAF6FEE46</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
                             </tr>
                             <tr>
-                              <td>Dec 25, 2017</td>
-                              <td>05:55:18</td>
-                              <td>65D0E4E72A6799688218FFA5216863173127B07DBA48E45420AA93B5F7762D5A</td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
                             </tr>
                           </tbody>
                         </table>
@@ -159,7 +159,7 @@
                                 <label for="todaydate">Date</label>
                               </div>
                             </div>
-                            <button class="btn waves-effect waves-light center" type="submit" name="actionPA">Submit</button>
+                            <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
                           </form>
                         </div>
                       <!-- END FORM 1 (PACKING LIST) -->
@@ -283,7 +283,7 @@
                                   <label for="unitpriceeverything">Unit Price for Everything Ordered</label>
                                 </div>
                               </div>
-                              <button class="btn waves-effect waves-light center" type="submit" name="actionInvoice" onclick="invoice()">Submit</button>
+                              <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
                             </form>
                           </div>
                         <!-- END FORM 2 (INVOICE) -->
@@ -301,7 +301,7 @@
                         <!-- START FORM 3 (MEDICINE DETAILS) -->
                         <h3>Medicine Details Form</h3>
                           <div class="row">
-                            <form class="col s12">
+                            <form class="col s12" action="/medicineDetails" method="post">
                               <!-- medicineDetailsId -->
                               <div class="row">
                                 <div class="input-field col s12">
