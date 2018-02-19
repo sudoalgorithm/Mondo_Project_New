@@ -38,28 +38,28 @@ def who():
 
 @app.route('/packingList', methods=['POST'])
 def packinglist():
-	packingListId = request.from['packingListID']
-	sender = request.from['to']
-	receiver = request.from['from']
-	shipdate = request.from['shipdate']
-	fob = request.from['fob']
-	accountNumber = request.from['accountnumber']
-	orderNumber = request.from['ordernumber']
-	department = request.from['department']
-	terms = request.from['terms']
-	quantityOrdered = request.from['qtyorder']
-	quantityShipped = request.from['qtyshipped']
-	description = request.from['description']
-	unitweight = request.from['unitweight']
-	totalWeight = request.from['totalweight']
-	totalcubicft = request.from['totalcubicft']
-	comment = request.from['comment']
-	todaydate = request.from['todaydate']
+	packingListId = request.form['packingListID']
+	sender = request.form['to']
+	receiver = request.form['form']
+	shipdate = request.form['shipdate']
+	fob = request.form['fob']
+	accountNumber = request.form['accountnumber']
+	orderNumber = request.form['ordernumber']
+	department = request.form['department']
+	terms = request.form['terms']
+	quantityOrdered = request.form['qtyorder']
+	quantityShipped = request.form['qtyshipped']
+	description = request.form['description']
+	unitweight = request.form['unitweight']
+	totalWeight = request.form['totalweight']
+	totalcubicft = request.form['totalcubicft']
+	comment = request.form['comment']
+	todaydate = request.form['todaydate']
 	jsonPA = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
 		"to": sender,
-		"from": receiver,
+		"form": receiver,
 		"shipDate": shipdate,
 		"FOBShippingPoint": fob,
 		"accountNumber": accountNumber,
@@ -84,7 +84,7 @@ def invoice():
 		"$class": "org.acme.mondo.Invoice",
 		"invoiceId": "123",
 		"to": "string",
-		"from": "string",
+		"form": "string",
 		"shipDate": "string",
 		"FOBShippingPoint": "string",
 		"accountNumber": 0,
