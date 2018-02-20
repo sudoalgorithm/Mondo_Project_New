@@ -141,7 +141,7 @@ def medicineDetails():
 		"quantity": quantity
 	}
 	url = 'http://localhost:3000/api/MedicineDetails'
-	response = requests.post(url, params=jsonMedicineDetails)
+	response = requests.post(url, json=jsonMedicineDetails)
 	response.text
 	return redirect(url_for('fa'))
 
