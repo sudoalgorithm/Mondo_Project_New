@@ -20,8 +20,13 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
+	valueList = []
 	json_val = responsefa.json()[0]['transactionId']
-	print json_val
+	json_val1 = responsefa.json()[0]['timestamp']
+	valueList.append(json_val)
+	valueList.append(json_val1)
+	print valueList
+	
 	return render_template('fa.html')
 
 @app.route('/ihc')
