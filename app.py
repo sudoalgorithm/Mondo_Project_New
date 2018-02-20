@@ -131,7 +131,7 @@ def invoice():
 def medicineDetails():
 	medicineDetailsID = request.form['medicineDetailsID']
 	doseStrength = request.form['dosestrength']
-	dosageForm = "Syrp"
+	dosageForm = request.form['dosageform']
 	quantity = request.form['qtymdf']  
 	jsonMedicineDetails = {
 		"$class": "org.acme.mondo.MedicineDetails",
