@@ -77,7 +77,7 @@ def packinglist():
 	}
 	url = 'http://localhost:3000/api/PackingList'
 	responsePA = requests.post(url, data=jsonPA)
-	print(responsePA.text)
+	responsePA.text
 	return redirect(url_for('fa'))
 
 
@@ -124,20 +124,26 @@ def invoice():
 	}
 	url = 'http://localhost:3000/api/Invoice'
 	response = requests.post(url, json=jsonInvoice)
-	response.json
+	response.text
 	return redirect(url_for('fa'))
 
-@app.route('/medicineDetails', methods=['POST'])
-def medicineDetails(): 
+@app.route('/medicineDetails', methods=['GET','POST'])
+def medicineDetails():
+	medicineDetailsID = request.form['medicineDetailsID']
+	doseStrength = request.form['dosestrength']
+	dosageForm = "Syrp"
+	quantity = request.form['qtymdf']  
 	jsonMedicineDetails = {
 		"$class": "org.acme.mondo.MedicineDetails",
-		"medicineDetailsId": "string",
-		"doseStrength": 0,
-		"dosageForm": "string",
-		"quantity": 0
+		"medicineDetailsId": medicineDetailsID,
+		"doseStrength": doseStrength,
+		"dosageForm": dosageForm,
+		"quantity": quantity
 	}
-	response = requests.post('http://localhost:3000/api/MedicineDetails', params=jsonMedicineDetails)
-	return response.text
+	url = 'http://localhost:3000/api/MedicineDetails'
+	response = requests.post(url, params=jsonMedicineDetails)
+	response.text
+	return redirect(url_for('fa'))
 
 @app.route('/InitiateImportProcess', methods=['POST'])
 def initiateImportProcess():
