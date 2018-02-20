@@ -16,8 +16,8 @@ def ca():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('ca.html')
+	if responsefa.json is None:
+		return render_template('ca.html')
 	
 
 @app.route('/customs')
@@ -28,8 +28,8 @@ def customs():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('customs.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('customs.html')	
+	if responsefa.json is None:
+		return render_template('customs.html')	
 
 @app.route('/fa')
 def fa():
@@ -39,8 +39,8 @@ def fa():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('fa.html')
+	if responsefa.json is None:
+		return render_template('fa.html')
 
 @app.route('/ihc')
 def ihc():
@@ -50,8 +50,8 @@ def ihc():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ihc.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('ich.html')	
+	if responsefa.json is None:
+		return render_template('ich.html')	
 
 @app.route('/mofa')
 def mofa():
@@ -61,8 +61,8 @@ def mofa():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('mofa.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('mofa.html')
+	if responsefa.json is None:
+		return render_template('mofa.html')
 
 @app.route('/moh')
 def moh():
@@ -72,8 +72,8 @@ def moh():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('moh.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('moh.html')	
+	if responsefa.json is None:
+		return render_template('moh.html')	
 
 @app.route('/who')
 def who():
@@ -83,8 +83,8 @@ def who():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('who.html', json_val=json_val, json_val1=json_val1)
-	
-	return render_template('who.html')	
+	if responsefa.json is None:
+		return render_template('who.html')	
 
 @app.route('/packingList', methods=['GET','POST'])
 def packinglist():
