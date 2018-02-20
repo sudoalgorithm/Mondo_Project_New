@@ -12,86 +12,74 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('ca.html')
-	if responsefa.text:
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
 	
+	return render_template('ca.html')
 	
 
 @app.route('/customs')
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('customs.html')
-	if responsefa.text:
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('customs.html', json_val=json_val, json_val1=json_val1)
 	
+	return render_template('customs.html')	
 
 @app.route('/fa')
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] is None:
-		return render_template('fa.html')
-	if responsefa.json()[0]['transactionId'] is not None:
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
-	
+	return render_template('fa.html')
 
 @app.route('/ihc')
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('ich.html')
-	if responsefa.text:
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ihc.html', json_val=json_val, json_val1=json_val1)
-		
+	
+	return render_template('ich.html')	
 
 @app.route('/mofa')
 def mofa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('mofa.html')
-	if responsefa.text:
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('mofa.html', json_val=json_val, json_val1=json_val1)
 	
+	return render_template('mofa.html')
 
 @app.route('/moh')
 def moh():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('moh.html')
-	if responsefa.text:
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('moh.html', json_val=json_val, json_val1=json_val1)
-		
+	
+	return render_template('moh.html')	
 
 @app.route('/who')
 def who():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.text is None:
-		return render_template('who.html')
-	if responsefa.text: 
+	if responsefa.json() is not None: 
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('who.html', json_val=json_val, json_val1=json_val1)
-		
+	
+	return render_template('who.html')	
 
 @app.route('/packingList', methods=['GET','POST'])
 def packinglist():
@@ -246,7 +234,7 @@ def mofaLetter():
 	url = 'http://localhost:3000/api/MoFALetter'
 	respone = requests.post(url, json=jsonMofaLetter)
 	respone.text
-	return redirect(url_for('ihc'))
+	return redirect(url_for('mofa'))
 
 
 if __name__ == '__main__':
