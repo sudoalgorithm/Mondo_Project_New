@@ -12,49 +12,62 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json()[0]['transactionId']
-	json_val1 = responsefa.json()[0]['timestamp']
-	json_val2 = responsefa.json()[1]['transactionId']
-	json_val3 = responsefa.json()[1]['timestamp']
-	json_val4 = responsefa.json()[2]['transactionId']
-	json_val5 = responsefa.json()[2]['timestamp']
-	return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	if responsefa.json() != None:
+		json_val = responsefa.json()[0]['transactionId']
+		json_val1 = responsefa.json()[0]['timestamp']
+		json_val2 = responsefa.json()[1]['transactionId']
+		json_val3 = responsefa.json()[1]['timestamp']
+		json_val4 = responsefa.json()[2]['transactionId']
+		json_val5 = responsefa.json()[2]['timestamp']
+		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	else:
+		return render_template('ca.html')
+	
 
 @app.route('/customs')
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json()[0]['transactionId']
-	json_val1 = responsefa.json()[0]['timestamp']
-	json_val2 = responsefa.json()[1]['transactionId']
-	json_val3 = responsefa.json()[1]['timestamp']
-	json_val4 = responsefa.json()[2]['transactionId']
-	json_val5 = responsefa.json()[2]['timestamp']
-	return render_template('customs.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	if responsefa.json() != None:
+		json_val = responsefa.json()[0]['transactionId']
+		json_val1 = responsefa.json()[0]['timestamp']
+		json_val2 = responsefa.json()[1]['transactionId']
+		json_val3 = responsefa.json()[1]['timestamp']
+		json_val4 = responsefa.json()[2]['transactionId']
+		json_val5 = responsefa.json()[2]['timestamp']
+		return render_template('customs.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	else:
+		return render_template('customs.html')	
 
 @app.route('/fa')
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json()[0]['transactionId']
-	json_val1 = responsefa.json()[0]['timestamp']
-	json_val2 = responsefa.json()[1]['transactionId']
-	json_val3 = responsefa.json()[1]['timestamp']
-	json_val4 = responsefa.json()[2]['transactionId']
-	json_val5 = responsefa.json()[2]['timestamp']
-	return render_template('fa.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	if responsefa.json() != None:
+		json_val = responsefa.json()[0]['transactionId']
+		json_val1 = responsefa.json()[0]['timestamp']
+		json_val2 = responsefa.json()[1]['transactionId']
+		json_val3 = responsefa.json()[1]['timestamp']
+		json_val4 = responsefa.json()[2]['transactionId']
+		json_val5 = responsefa.json()[2]['timestamp']
+		return render_template('fa.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	else:
+		return render_template('fa.html')
 
 @app.route('/ihc')
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json()[0]['transactionId']
-	json_val1 = responsefa.json()[0]['timestamp']
-	json_val2 = responsefa.json()[1]['transactionId']
-	json_val3 = responsefa.json()[1]['timestamp']
-	json_val4 = responsefa.json()[2]['transactionId']
-	json_val5 = responsefa.json()[2]['timestamp']
-	return render_template('ihc.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	if responsefa.json() != None:
+		json_val = responsefa.json()[0]['transactionId']
+		json_val1 = responsefa.json()[0]['timestamp']
+		json_val2 = responsefa.json()[1]['transactionId']
+		json_val3 = responsefa.json()[1]['timestamp']
+		json_val4 = responsefa.json()[2]['transactionId']
+		json_val5 = responsefa.json()[2]['timestamp']
+		return render_template('ihc.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
+	else:
+		return render_template('ich.html')	
 
 @app.route('/mofa')
 def mofa():
