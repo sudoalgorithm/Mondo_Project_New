@@ -22,7 +22,7 @@ def fa():
 	responsefa = requests.get(url)
 	json_val = responsefa.json()[0]['transactionId']
 	json_val1 = responsefa.json()[0]['timestamp']
-	return render_template('fa.html', json_val, json_val1)
+	return render_template('fa.html', json_val=json_val, json_val1=json_val1)
 
 @app.route('/ihc')
 def ihc():
