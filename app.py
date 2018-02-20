@@ -12,7 +12,7 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('ca.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -25,7 +25,7 @@ def ca():
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('customs.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -37,7 +37,7 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('fa.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -49,7 +49,7 @@ def fa():
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('ich.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -61,7 +61,7 @@ def ihc():
 def mofa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('mofa.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -73,7 +73,7 @@ def mofa():
 def moh():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('moh.html')
 	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
@@ -85,7 +85,7 @@ def moh():
 def who():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json is None:
+	if responsefa.json() is None:
 		return render_template('who.html')
 	if responsefa.json() is not None: 
 		json_val = responsefa.json()[0]['transactionId']
