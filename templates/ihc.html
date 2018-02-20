@@ -50,6 +50,7 @@
                       <h3>MoFA Letter Form</h3>
                       <h5>Upload MoFA Letter</h5>
                         <div class="row">
+                        <form class="col s12" action="mofaLetter" method="POST">
                           <div class="file-field input-field">
                             <div class="btn">
                               <span>MoFA Letter</span>
@@ -59,10 +60,9 @@
                               <input class="file-path validate" type="text" name="filepath">
                             </div>
                           </div>
-                        </div>
                         <div class="row">
-                          <form class="col s12" action="mofaLetter" method="POST">
-                            <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                            <button class="btn waves-effect waves-light center" type="submit">Submit</button>
+                         </div>   
                           </form>
                         </div>
                       <!-- END FORM 1 (Cover Letter) -->
