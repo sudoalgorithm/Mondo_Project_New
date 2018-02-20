@@ -128,7 +128,7 @@ def invoice():
 	return redirect(url_for('fa'))
 
 @app.route('/medicineDetails', methods=['POST'])
-def medicineDetails():
+def medicineDetails(): 
 	jsonMedicineDetails = {
 		"$class": "org.acme.mondo.MedicineDetails",
 		"medicineDetailsId": "string",
