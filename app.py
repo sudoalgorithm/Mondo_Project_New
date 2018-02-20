@@ -227,7 +227,7 @@ def customsTrans():
 	url = 'http://localhost:3000/api/IssueBillOfEntry'
 	response = requests.post(url, json=jsonTranx)
 	response.text
-	return redirect(url_for('customs.html'))
+	return redirect(url_for('customs'))
 
 
 
