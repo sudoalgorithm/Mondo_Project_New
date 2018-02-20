@@ -10,11 +10,27 @@ def index():
 
 @app.route('/ca')
 def ca():
-	return render_template('ca.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/customs')
 def customs():
-	return render_template('customs.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('customs.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/fa')
 def fa():
@@ -30,19 +46,51 @@ def fa():
 
 @app.route('/ihc')
 def ihc():
-	return render_template('ihc.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('ihc.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/mofa')
 def mofa():
-	return render_template('mofa.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('mofa.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/moh')
 def moh():
-	return render_template('moh.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('moh.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/who')
 def who():
-	return render_template('who.html')
+	url = 'http://localhost:3000/api/InitiateImportProcess'
+	responsefa = requests.get(url)
+	json_val = responsefa.json()[0]['transactionId']
+	json_val1 = responsefa.json()[0]['timestamp']
+	json_val2 = responsefa.json()[1]['transactionId']
+	json_val3 = responsefa.json()[1]['timestamp']
+	json_val4 = responsefa.json()[2]['transactionId']
+	json_val5 = responsefa.json()[2]['timestamp']
+	return render_template('who.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 
 @app.route('/packingList', methods=['GET','POST'])
 def packinglist():
