@@ -239,7 +239,7 @@ def mofaLetter():
 	url = 'http://localhost:3000/api/MoFALetter'
 	respone = requests.post(url, json=jsonMofaLetter)
 	respone.text
-	return redirect(url_for('mofa'))
+	return redirect(url_for('ihc'))
 
 
 if __name__ == '__main__':
