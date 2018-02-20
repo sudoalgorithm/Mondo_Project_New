@@ -12,7 +12,7 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -28,7 +28,7 @@ def ca():
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -43,7 +43,7 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -58,7 +58,7 @@ def fa():
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -73,7 +73,7 @@ def ihc():
 def mofa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -88,7 +88,7 @@ def mofa():
 def moh():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None:
+	if responsefa.json() is None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
@@ -96,13 +96,14 @@ def moh():
 		json_val4 = responsefa.json()[2]['transactionId']
 		json_val5 = responsefa.json()[2]['timestamp']
 		return render_template('moh.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
-	return render_template('moh.html')	
+	else:
+		return render_template('moh.html')	
 
 @app.route('/who')
 def who():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() != None: 
+	if responsefa.json() is None: 
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		json_val2 = responsefa.json()[1]['transactionId']
