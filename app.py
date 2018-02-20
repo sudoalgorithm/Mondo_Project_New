@@ -84,8 +84,8 @@ def packinglist():
 @app.route('/invoice', methods=['GET','POST'])
 def invoice():
 	invoiceID = request.form['invoiceID']
-	sender = request.form['fromif']
-	receiver = request.form['toif']
+	sender = request.form['toif']
+	receiver = request.form['fromif']
 	shipdate = request.form['shipdateif']
 	fob = request.form['fobif']
 	accountNumber = request.form['accountnumberif']
@@ -94,18 +94,18 @@ def invoice():
 	terms = request.form['termsif']
 	quantityOrdered = request.form['qtyorderif']
 	quantityShipped = request.form['qtyshippedif']
-	description = request.form['descriptionif']
+	description = request.form['descif']
 	unitweight = request.form['unitweightif']
 	totalWeight = request.form['totalweightif']
 	totalcubicft = request.form['totalcubicftif']
-	comment = request.form['commentif']
+	comment = request.form['commentsif']
 	todaydate = request.form['todaydateif']
 	unitPriceEverything = request.form['unitpriceeverythingif']
 	jsonInvoice = {
 		"$class": "org.acme.mondo.Invoice",
 		"invoiceId": invoiceID,
 		"to": sender,
-		"form": receiver,
+		"from": receiver,
 		"shipDate": shipdate,
 		"FOBShippingPoint": fob,
 		"accountNumber": accountNumber,
