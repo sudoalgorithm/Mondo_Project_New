@@ -21,7 +21,7 @@ def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
 	json_val = responsefa.json
-	print jsonify(json_val)
+	print json_val
 	return render_template('fa.html')
 
 @app.route('/ihc')
