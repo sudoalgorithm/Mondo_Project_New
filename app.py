@@ -219,13 +219,14 @@ def iosDocument():
 	response1.text
 	return redirect(url_for('fa'))
 
-	@app.route('/customsTrans')
+	@app.route('/customsTrans', methods=['POST','GET'])
 	def customsTrans():
 		jsonTranx = {
  			"$class": "org.acme.mondo.IssueBillOfEntry"
 		}
 		urlTranx = 'http://localhost:3000/api/IssueBillOfEntry'
 		responseCustom = requests.post(urlTranx, json=jsonTranx)
+		responseCustom.text
 		return redirect(url_for('customs.html'))
 
 
