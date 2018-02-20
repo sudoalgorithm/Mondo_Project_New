@@ -44,12 +44,13 @@ def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
 	if responsefa.json() is not None:
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
+		for i in range(0,5):
+			json_val = responsefa.json()[i]['transactionId']
+			json_val1 = responsefa.json()[i]['timestamp']
+			json_val2 = responsefa.json()[i]['transactionId']
+			json_val3 = responsefa.json()[i]['timestamp']
+			json_val4 = responsefa.json()[i]['transactionId']
+			json_val5 = responsefa.json()[i]['timestamp']
 		return render_template('fa.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
 	else:
 		return render_template('fa.html')
