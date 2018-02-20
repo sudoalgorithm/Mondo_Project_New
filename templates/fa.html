@@ -336,14 +336,48 @@
                             </form>
                           </div>
                         <!-- END FORM 3 (MEDICINE DETAILS) -->
-                      </div>
+                        </div>
                       <div class="modal-footer">
-                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                        </div>
                       </div>
-                    </div>
+                      <!-- END MODAL 3 -->
+  
+                      <a class="waves-effect waves-light btn modal-trigger oval" href="#modal4">ISO Certificate</a>
+                      <!-- START MODAL 4 -->
+                      <div id="modal4" class="modal modal-fixed-footer modal">
+                        <div class="modal-content">
+                          <!-- START FORM 4 (ISO CERTIFICATE) -->
+                          <h3>ISO Certificate Form</h3>
+                          <h5>Select the file from a local folder</h5>
+                         <form class="col s12" action="/iosDocument" method="POST">
+                            <div class="row">
+                              <div class="input-field col s12">
+                                <input type="text" id="isodocumentID" name="isodocumentID">
+                                <label for="isodocumentID">ISO Document ID</label>
+                              </div>
+                            </div>
+                            <div class="file-field input-field">
+                              <div class="btn">
+                                <span>ISO Certificate</span>
+                                <input name="file" type="file">
+                              </div>
+                              <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" name="filepath">
+                              </div>
+                            </div>
+                            <button class="btn waves-effect waves-light center" type="submit">Upload</button>
+                          </form>
+                          <!-- END FORM 4 (ISO CERTIFICATE) -->
+                        </div>
+                        <div class="modal-footer">
+                          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
+                        </div>
+                      </div>
+                      <!-- END MODAL 4 -->
+                  </div>
                 </div>
-              </div>
-              <!-- END MAIN CONTENT -->
-        </div>
+                <!-- END MAIN CONTENT -->
+          </div>
   </body>
 </html>

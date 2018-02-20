@@ -145,17 +145,19 @@ def medicineDetails():
 	response.text
 	return redirect(url_for('fa'))
 
-@app.route('/InitiateImportProcess', methods=['POST'])
-def initiateImportProcess():
-	jsonImportProcess = {
-		 "$class": "org.acme.mondo.InitiateImportProcess",
-    	"packingList": "resource:org.acme.mondo.PackingList#123",
-    	"invoice": "resource:org.acme.mondo.Invoice#123",
-    	"medicineDetails": "resource:org.acme.mondo.MedicineDetails#123",
-    	"ISODocument": "resource:org.acme.mondo.ISODocument#123"
+@app.route('/iosDocument', methods=['POST','GET'])
+def iosDocument():
+	iosDocumentID = request.form['isodocumentID']
+	filepath = request.form['filepath']
+	jsonISODoc = {
+		"$class": "org.acme.mondo.ISODocument",
+ 		"ISODocumentId": iosDocumentID,
+ 		"Hash": filepath
 	}
-	response = requests.post('http://localhost:3000/api/InitiateImportProcess', params=jsonImportProcess)
-	return response.text
+	url = 'http://localhost:3000/api/ISODocument'
+	response = requests.post(url, json=jsonISODoc)
+	response.text
+	return redirect(url_for('fa'))
 
 
 if __name__ == '__main__':
