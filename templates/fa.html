@@ -60,11 +60,11 @@
                       <!-- START FORM 1 (PACKING LIST) -->
                       <h3>Packing List Form</h3>
                         <div class="row">
-                          <form class="col s12" action="{{ url_for('packinglist') }}" method="['POST']">
+                          <form class="col s12" action="packingList" method="post">
                             <!-- packingListId -->
                             <div class="row">
                               <div class="input-field col s12">
-                                <input type="text" id="packingListID">
+                                <input type="text" name="packingListID" id="packingListID">
                                 <label for="packingListID">Packing List ID</label>
                               </div>
                             </div>                            
