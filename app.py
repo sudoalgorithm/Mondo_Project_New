@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, json
+from flask import Flask, render_template, url_for, request, redirect, json, jsonify
 import requests
 import os
 
@@ -20,8 +20,8 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json()
-	print json_val
+	json_val = responsefa.json
+	print jsonify(json_val)
 	return render_template('fa.html')
 
 @app.route('/ihc')
