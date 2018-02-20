@@ -96,8 +96,7 @@ def moh():
 		json_val4 = responsefa.json()[2]['transactionId']
 		json_val5 = responsefa.json()[2]['timestamp']
 		return render_template('moh.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3, json_val4=json_val4, json_val5=json_val5)
-	else:
-		return render_template('moh.html')	
+	return render_template('moh.html')	
 
 @app.route('/who')
 def who():
