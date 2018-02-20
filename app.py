@@ -81,31 +81,51 @@ def packinglist():
 	return redirect(url_for('fa'))
 
 
-@app.route('/invoice', methods=['POST'])
+@app.route('/invoice', methods=['GET','POST'])
 def invoice():
+	invoiceID = request.form['invoiceID']
+	sender = request.form['fromif']
+	receiver = request.form['toif']
+	shipdate = request.form['shipdateif']
+	fob = request.form['fobif']
+	accountNumber = request.form['accountnumberif']
+	orderNumber = request.form['ordernumberif']
+	department = request.form['departmentif']
+	terms = request.form['termsif']
+	quantityOrdered = request.form['qtyorderif']
+	quantityShipped = request.form['qtyshippedif']
+	description = request.form['descriptionif']
+	unitweight = request.form['unitweightif']
+	totalWeight = request.form['totalweightif']
+	totalcubicft = request.form['totalcubicftif']
+	comment = request.form['commentif']
+	todaydate = request.form['todaydateif']
+	unitPriceEverything = request.form['unitpriceeverythingif']
 	jsonInvoice = {
 		"$class": "org.acme.mondo.Invoice",
-		"invoiceId": "123",
-		"to": "string",
-		"form": "string",
-		"shipDate": "string",
-		"FOBShippingPoint": "string",
-		"accountNumber": 0,
-		"orderNumber": 0,
-		"department": "string",
-		"termsNoAnticipation": "string",
-		"quantityOrdered": 0,
-		"quantityShipped": 0,
-		"description": "string",
-		"unitWeight": 0,
-		"totalWeight": 0,
-		"totalCubicFeet": 0,
-		"comments": "string",
-		"date": "string",
-		"unitPriceForEverythingOrdered": 0
+		"invoiceId": invoiceID,
+		"to": sender,
+		"form": receiver,
+		"shipDate": shipdate,
+		"FOBShippingPoint": fob,
+		"accountNumber": accountNumber,
+		"orderNumber": orderNumber,
+		"department": department,
+		"termsNoAnticipation": terms,
+		"quantityOrdered": quantityOrdered,
+		"quantityShipped": quantityShipped,
+		"description": description,
+		"unitWeight": unitweight,
+		"totalWeight": totalWeight,
+		"totalCubicFeet": totalcubicft,
+		"comments": comment,
+		"date": todaydate,
+		"unitPriceForEverythingOrdered": unitPriceEverything
 	}
-	response = requests.post('http://localhost:3000/api/Invoice', json=jsonInvoice)
-	return response.text
+	url = 'http://localhost:3000/api/Invoice'
+	response = requests.post(url, json=jsonInvoice)
+	response.json
+	return redirect(url_for('fa'))
 
 @app.route('/medicineDetails', methods=['POST'])
 def medicineDetails():
