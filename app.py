@@ -20,7 +20,7 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	json_val = responsefa.json
+	json_val = responsefa.json()[0]
 	print json_val
 	return render_template('fa.html')
 
