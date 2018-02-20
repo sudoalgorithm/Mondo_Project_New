@@ -154,9 +154,19 @@ def iosDocument():
  		"ISODocumentId": iosDocumentID,
  		"Hash": filepath
 	}
-	url = 'http://localhost:3000/api/ISODocument'
-	response = requests.post(url, json=jsonISODoc)
+	jsonTransaction = {
+		"$class": "org.acme.mondo.InitiateImportProcess",
+		"packingList": "resource:org.acme.mondo.PackingList#123",
+		"invoice": "resource:org.acme.mondo.Invoice#123",
+		"medicineDetails": "resource:org.acme.mondo.MedicineDetails#123",
+		"ISODocument": "resource:org.acme.mondo.ISODocument#123"
+	}
+	url1 = 'http://localhost:3000/api/ISODocument'
+	url2 = 'http://localhost:3000/api/InitiateImportProcess'
+	response = requests.post(url1, json=jsonISODoc)
 	response.text
+	response1 = requests.post(url2, json=jsonTransaction)
+	response1.text
 	return redirect(url_for('fa'))
 
 
