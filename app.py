@@ -241,6 +241,18 @@ def mofaLetter():
 	respone.text
 	return redirect(url_for('ihc'))
 
+@app.route('/whoLetter', methods=['POST','GET'])
+def whoLetter():
+	filepath = request.form['filepathwho']
+	jsonWhoLetter = {
+		"$class": "org.acme.mondo.WHOLetter",
+		"letterHash": filepath
+	}
+	url = 'http://localhost:3000/api/WHOLetter'
+	respone = requests.post(url, json=jsonWhoLetter)
+	respone.text
+	return redirect(url_for('ihc'))
+
 
 if __name__ == '__main__':
 	app.debug = True

@@ -82,19 +82,19 @@
                       <h3>WHO Letter Form</h3>
                       <h5>Upload WHO Letter</h5>
                         <div class="row">
+                        <form class="col s12" action="whoLetter" method="POST">
                           <div class="file-field input-field">
                             <div class="btn">
                               <span>WHO Letter</span>
                               <input type="file">
                             </div>
                             <div class="file-path-wrapper">
-                              <input class="file-path validate" type="text">
+                              <input class="file-path validate" type="text" name="filepathwho">
                             </div>
                           </div>
-                        </div>
                         <div class="row">
-                          <form class="col s12">
-                            <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
+                          <button class="btn waves-effect waves-light center" type="submit">Submit</button>
+                        </div>  
                           </form>
                         </div>
                       <!-- END FORM 1 (Cover Letter) -->
