@@ -59,7 +59,7 @@ def packinglist():
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
 		"to": sender,
-		"form": receiver,
+		"from": receiver,
 		"shipDate": shipdate,
 		"FOBShippingPoint": fob,
 		"accountNumber": accountNumber,
@@ -76,8 +76,8 @@ def packinglist():
 		"date": todaydate
 	}
 	url = 'http://localhost:3000/api/PackingList'
-	responsePA = requests.post(url,json=jsonPA)
-	responsePA.json
+	responsePA = requests.post(url, data=jsonPA)
+	print(responsePA.text)
 	return redirect(url_for('fa'))
 
 
