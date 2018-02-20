@@ -12,9 +12,9 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('ca.html')
-	if responsefa.json() is not None:
+	if responsefa.data is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
@@ -25,9 +25,9 @@ def ca():
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('customs.html')
-	if responsefa.json() is not None:
+	if responsefa.data:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('customs.html', json_val=json_val, json_val1=json_val1)
@@ -37,9 +37,9 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('fa.html')
-	if responsefa.json() is not None:
+	if responsefa.data:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
@@ -49,9 +49,9 @@ def fa():
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('ich.html')
-	if responsefa.json() is not None:
+	if responsefa.data:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ihc.html', json_val=json_val, json_val1=json_val1)
@@ -61,9 +61,9 @@ def ihc():
 def mofa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('mofa.html')
-	if responsefa.json() is not None:
+	if responsefa.data:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('mofa.html', json_val=json_val, json_val1=json_val1)
@@ -73,9 +73,9 @@ def mofa():
 def moh():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('moh.html')
-	if responsefa.json() is not None:
+	if responsefa.data:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('moh.html', json_val=json_val, json_val1=json_val1)
@@ -85,9 +85,9 @@ def moh():
 def who():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is None:
+	if responsefa.data is None:
 		return render_template('who.html')
-	if responsefa.json() is not None: 
+	if responsefa.data: 
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('who.html', json_val=json_val, json_val1=json_val1)
