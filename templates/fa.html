@@ -283,7 +283,7 @@
                                   <label for="unitpriceeverythingif">Unit Price for Everything Ordered</label>
                                 </div>
                               </div>
-                              <button class="btn waves-effect waves-light center" type="submit">Submit</button>
+                              <button class="btn waves-effect waves-light center" type="submit" value="Send">Submit</button>
                             </form>
                           </div>
                         <!-- END FORM 2 (INVOICE) -->
@@ -301,18 +301,18 @@
                         <!-- START FORM 3 (MEDICINE DETAILS) -->
                         <h3>Medicine Details Form</h3>
                           <div class="row">
-                            <form class="col s12">
+                            <form class="col s12" action="/medicineDetails" method="POST">
                               <!-- medicineDetailsId -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="medicineDetailsID">
+                                  <input type="text" id="medicineDetailsID" name="medicineDetailsID">
                                   <label for="medicineDetailsID">Medicine Details ID</label>
                                 </div>
                               </div>                             
                               <!-- Dose Strength/Dosage Form -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="number" id="dosestrength">
+                                  <input type="number" id="dosestrength" name="dosestrength">
                                   <label for="dosestrength">Dose Strength</label>
                                 </div>
                                 <div class="input-field col s6">
