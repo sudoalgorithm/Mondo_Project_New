@@ -36,11 +36,11 @@ def moh():
 def who():
 	return render_template('who.html')
 
-@app.route('/packingList', methods=['POST'])
+@app.route('/packingList', methods=['GET','POST'])
 def packinglist():
 	packingListId = request.form['packingListID']
-	sender = request.form['to']
-	receiver = request.form['form']
+	sender = request.form['from']
+	receiver = request.form['to']
 	shipdate = request.form['shipdate']
 	fob = request.form['fob']
 	accountNumber = request.form['accountnumber']
@@ -55,7 +55,7 @@ def packinglist():
 	totalcubicft = request.form['totalcubicft']
 	comment = request.form['comment']
 	todaydate = request.form['todaydate']
-	jsonPA = jsonify({
+	jsonPA = {
 		"$class": "org.acme.mondo.PackingList",
 		"packingListId": packingListId,
 		"to": sender,
@@ -74,7 +74,7 @@ def packinglist():
 		"totalCubicFeet": totalcubicft,
 		"comments": comment,
 		"date": todaydate
-	})
+	}
 	url = 'http://localhost:3000/api/PackingList'
 	responsePA = requests.post(url,json=jsonPA)
 	responsePA.json
