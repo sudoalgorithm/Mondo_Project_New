@@ -20,20 +20,20 @@
                 <h3>Network Transactions</h3>
                 <div class="network_content">
                   <!-- START TABLE -->
-									<table class="striped centered responsive-table">
-										<thead>
-											<tr>
-													<th>TimeStamp</th>
-													<th>Transaction ID</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>{{ json_val1 }}</td>
-												<td>{{ json_val }}</td>
-											</tr>
-										</tbody>
-									</table>
+                        <table class="striped centered responsive-table">
+                          <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Transaction ID</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              	<td>{{ json_val1 }}</td>
+                                <td>{{ json_val }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
                   <!-- END TABLE -->
                   <!-- Can add Pagination if required :) -->
                 </div>
@@ -48,23 +48,242 @@
                       <h3>Pre-Import Permit Request</h3>
                       <h5>Do you wish to approve or reject this request from WHO?</h5>
                       <br> <br>
-	                    <div class="row">
-	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-module">Module</a>
-	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-medical">Medical Store Details</a>
-	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-product">Product</a>
-	                        <a class="waves-effect waves-light btn modal-trigger oval" href="#modal-documents">Documents</a>
-	                    </div>
-                      	<div class="row">
-	                        <div class="switch">
-	                          <label>
-	                            Rejected
-	                            <input type="checkbox">
-	                            <span class="lever"></span>
-	                            Approved
-	                          </label>
-	                        </div>
-                      	</div>	       
-                      	<br>             
+											<div class="row">
+	                        <form class="col s12" action="">
+	                          <!-- moduleId -->
+	                          <div class="row">
+	                            <div class="input-field col s12">
+	                              <input type="text" id="moduleID">
+	                              <label for="moduleID">Module ID</label>
+	                            </div>
+	                          </div>                            
+	                          <!-- Type/Import Module -->
+	                          <div class="row">
+	                            <div class="input-field col s6">
+	                              <input type="text" id="type">
+	                              <label for="type">Type</label>
+	                            </div>
+	                            <div class="input-field col s6">
+	                              <select id="importmodule">
+	                                <option value="" disabled selected>Choose your option</option>
+	                                <option value="1">Module 1</option>
+	                                <option value="2">Module 2</option>
+	                                <option value="3">Module 3</option>
+	                              </select>
+	                              <label for="importmodule">Import Module</label>
+	                            </div>
+														</div>
+														<div class="row">
+																<div class="input-field col s12">
+																	<input type="text" id="medicalStoreDetailsID">
+																	<label for="medicalStoreDetailsID">Medical Store Details ID</label>
+																</div>
+															</div>                            
+															<!-- MOH License Number -->
+															<div class="row">
+																<div class="input-field col s12">
+																	<input type="number" id="MOHNumber">
+																	<label for="MOHNumber">MOH License Number</label>
+																</div>
+															</div>
+															<!-- Importer -->
+															<div class="row">
+																<div class="input-field col s12">
+																	<input type="text" id="importer">
+																	<label for="importer">Importer</label>
+																</div>
+															</div>
+															<!-- Country/City -->
+															<div class="row">
+																<div class="input-field col s6">
+																	<input type="text" id="country">
+																	<label for="country">Country</label>
+																</div>
+																<div class="input-field col s6">
+																	<input type="text" id="city">
+																	<label for="city">City</label>
+																</div>
+															</div>
+															<!-- Address/PO Box -->
+															<div class="row">
+																<div class="input-field col s8">
+																	<textarea id="address" class="materialize-textarea"></textarea>
+																	<label for="address">Address</label>
+																</div>
+																<div class="input-field col s4">
+																	<input id="pobox" type="text"/>
+																	<label for="pobox">PO Box</label>
+																</div>
+															</div>
+															<!-- Phone/Fax -->
+															<div class="row">
+																<div class="input-field col s8">
+																	<input id="phone" type="text"/>
+																	<label for="phone">Phone</label>
+																</div>
+																<div class="input-field col s4">
+																	<input id="Fax" type="text"/>
+																	<label for="fax">Fax</label>
+																</div>
+															</div>
+															<!-- Email/Website -->
+															<div class="row">
+																<div class="input-field col s8">
+																	<input id="email" type="email"/>
+																	<label for="email">Email</label>
+																</div>
+																<div class="input-field col s4">
+																	<input id="website" type="text"/>
+																	<label for="website">Website</label>
+																</div>
+															</div>
+															<div class="row">
+																	<div class="input-field col s12">
+																		<input type="text" id="productID">
+																		<label for="productID">Product ID</label>
+																	</div>
+																</div>                            
+																<!-- Register Product/Unregister Product -->
+																<div class="row">
+																		<div class="switch">
+																			<label>
+																				Unregister Product
+																				<input type="checkbox">
+																				<span class="lever"></span>
+																				Register Product
+																			</label>
+																		</div>
+																</div>
+																<!-- Product Class/Product/Product Form -->
+																<div class="row">
+																	<div class="input-field col s4">
+																		<select id="productclass">
+																			<option value="" disabled selected>Choose your option</option>
+																			<option value="1">Product Class 1</option>
+																			<option value="2">Product Class 2</option>
+																			<option value="3">Product Class 3</option>
+																		</select>
+																		<label for="productclass">Product Class</label>
+																	</div>
+																	<div class="input-field col s4">
+																		<select id="product">
+																			<option value="" disabled selected>Choose your option</option>
+																			<option value="1">Product 1</option>
+																			<option value="2">Product 2</option>
+																			<option value="3">Product 3</option>
+																		</select>
+																		<label for="product">Product</label>
+																	</div>
+																	<div class="input-field col s4">
+																		<select id="productform">
+																			<option value="" disabled selected>Choose your option</option>
+																			<option value="1">Product Form 1</option>
+																			<option value="2">Product Form 2</option>
+																			<option value="3">Product Form 3</option>
+																		</select>
+																		<label for="productform">Product Form</label>
+																	</div>
+																</div>
+																<!-- Pack Size/Shelf Life -->
+																<div class="row">
+																	<div class="input-field col s6">
+																		<select id="packsize">
+																			<option value="" disabled selected>Choose your option</option>
+																			<option value="1">Pack Size 1</option>
+																			<option value="2">Pack Size 2</option>
+																			<option value="3">Pack Size 3</option>
+																		</select>
+																		<label for="packsize">Pack Size</label>
+																	</div>
+																	<div class="input-field col s6">
+																		<input type="text" id="shelflife">
+																		<label for="shelflife">Shelf Life</label>
+																	</div>
+																</div>
+																<!-- Batch Number -->
+																<div class="row">
+																	<div class="input-field col s12">
+																		<input id="batchnumber" type="number"/>
+																		<label for="batchnumber">Batch Number</label>
+																	</div>
+																</div>
+																<!-- CIF Unit Price/Invoice Unit Price/Quantity -->
+																<div class="row">
+																	<div class="input-field col s4">
+																		<input id="cifuprice" type="number" step="any"/>
+																		<label for="cifuprice">CIF Unit Price</label>
+																	</div>
+																	<div class="input-field col s4">
+																		<input id="invoiceuprice" type="number" step="any"/>
+																		<label for="invoiceuprice">Invoice Unit Price</label>
+																	</div>
+																	<div class="input-field col s4">
+																		<input id="quantity" type="number"/>
+																		<label for="quantity">Quantity</label>
+																	</div>
+																</div>
+																<!-- Batch Manufacturing Date/Batch Expiry Date -->
+																<div class="row">
+																	<div class="input-field col s6">
+																		<input id="batchmanufdate" type="text" class="datepicker"/>
+																		<label for="batchmanufdate">Batch Manufacturing Date</label>
+																	</div>
+																	<div class="input-field col s6">
+																		<input id="batchexpdate" type="text" class="datepicker"/>
+																		<label for="batchexpdate">Batch Expiry Date</label>
+																	</div>
+																</div>
+																<!-- Manufacturer/Country of Origin -->
+																<div class="row">
+																	<div class="input-field col s6">
+																		<select id="manufacturer">
+																			<option value="" disabled selected>Choose your option</option>
+																			<option value="1">Manufacturer 1</option>
+																			<option value="2">Manufacturer 2</option>
+																			<option value="3">Manufacturer 3</option>
+																		</select>
+																		<label for="manufacturer">Manufacturer</label>
+																	</div>
+																	<div class="input-field col s6">
+																		<input id="countryoforigin" type="text"/>
+																		<label for="countryoforigin">Country of Origin</label>
+																	</div>
+																</div>
+																<div class="row">
+																		<div class="input-field col s12">
+																			<input type="text" id="documentID">
+																			<label for="documentID">Document ID</label>
+																		</div>
+																	</div>                            
+																	<!-- Document Name -->
+																	<div class="row">
+																		<div class="input-field col s12">
+																			<input type="text" id="documentName">
+																			<label for="documentName">Document Name</label>
+																		</div>
+																	</div>   
+																	<!-- Document Type -->
+																	<div class="row">
+																		<div class="input-field col s12">
+																			<input type="text" id="documentType">
+																			<label for="documentType">Document Type</label>
+																		</div>
+																	</div> 
+																	<!-- Document Hash/Uploads -->
+																	<div class="row">
+																		<div class="file-field input-field">
+																			<div class="btn">
+																				<span>Documents</span>
+																				<input name="file" type="file" multiple>
+																			</div>
+																			<div class="file-path-wrapper">
+																				<input class="file-path validate" type="text">
+																			</div>
+																		</div>
+																	</div>
+	                        		</form>
+	                    			</div>
+                      		<br>             
 	                    <div class="row" style="margin-right: 15em; margin-left: 15em;">
 	                      <form class="col s12">
 	                        <a onclick="toastMe('yes')" class="btn-floating btn-large waves-effect waves-light green left"><i class="large material-icons left">check_circle</i></a>
@@ -385,307 +604,6 @@
               </div>
               <!-- END MAIN CONTENT -->
 
-              <!-- INNER MODALS HERE :) \m/ -->
-              <div class="center">
-	                <!-- START Module MODAL -->
-	                <div id="modal-module" class="modal modal-fixed-footer modal">
-	                  <div class="modal-content">
-	                    <!-- Start Module Form-->
-	                    <h3 style="text-align: center;">Module Form</h3>
-	                      <div class="row">
-	                        <form class="col s12 disabled">
-	                          <!-- moduleId -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="moduleID">
-	                              <label for="moduleID">Module ID</label>
-	                            </div>
-	                          </div>                            
-	                          <!-- Type/Import Module -->
-	                          <div class="row">
-	                            <div class="input-field col s6">
-	                              <input type="text" id="type">
-	                              <label for="type">Type</label>
-	                            </div>
-	                            <div class="input-field col s6">
-	                              <select id="importmodule">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Module 1</option>
-	                                <option value="2">Module 2</option>
-	                                <option value="3">Module 3</option>
-	                              </select>
-	                              <label for="importmodule">Import Module</label>
-	                            </div>
-	                          </div>
-	                        </form>
-	                      </div>
-	                    <!-- End Module Form -->
-	                  </div>
-	                  <div class="modal-footer">
-	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
-	                  </div>
-	                </div>
-	                <!-- END Module MODAL -->
-	                <!-- START Medical Store Details MODAL -->
-	                <div id="modal-medical" class="modal modal-fixed-footer modal-bigger">
-	                  <div class="modal-content">
-	                    <!-- Start Module Form-->
-	                    <h3 style="text-align: center;">Medical Store Details Form</h3>
-	                      <div class="row">
-	                        <form class="col s12 disabled">
-	                          <!-- medicalStoreDetailsId -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="medicalStoreDetailsID">
-	                              <label for="medicalStoreDetailsID">Medical Store Details ID</label>
-	                            </div>
-	                          </div>                            
-	                          <!-- MOH License Number -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="number" id="MOHNumber">
-	                              <label for="MOHNumber">MOH License Number</label>
-	                            </div>
-	                          </div>
-	                          <!-- Importer -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="importer">
-	                              <label for="importer">Importer</label>
-	                            </div>
-	                          </div>
-	                          <!-- Country/City -->
-	                          <div class="row">
-	                            <div class="input-field col s6">
-	                              <input type="text" id="country">
-	                              <label for="country">Country</label>
-	                            </div>
-	                            <div class="input-field col s6">
-	                              <input type="text" id="city">
-	                              <label for="city">City</label>
-	                            </div>
-	                          </div>
-	                          <!-- Address/PO Box -->
-	                          <div class="row">
-	                            <div class="input-field col s8">
-	                              <textarea id="address" class="materialize-textarea"></textarea>
-	                              <label for="address">Address</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <input id="pobox" type="text"/>
-	                              <label for="pobox">PO Box</label>
-	                            </div>
-	                          </div>
-	                          <!-- Phone/Fax -->
-	                          <div class="row">
-	                            <div class="input-field col s8">
-	                              <input id="phone" type="text"/>
-	                              <label for="phone">Phone</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <input id="Fax" type="text"/>
-	                              <label for="fax">Fax</label>
-	                            </div>
-	                          </div>
-	                          <!-- Email/Website -->
-	                          <div class="row">
-	                            <div class="input-field col s8">
-	                              <input id="email" type="email"/>
-	                              <label for="email">Email</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <input id="website" type="text"/>
-	                              <label for="website">Website</label>
-	                            </div>
-	                          </div>
-	                        </form>
-	                      </div>
-	                    <!-- End Module Form -->
-	                  </div>
-	                  <div class="modal-footer">
-	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
-	                  </div>
-	                </div>
-	                <!-- END Medical Store Details MODAL -->
-	                <!-- START Product MODAL -->
-	                <div id="modal-product" class="modal modal-fixed-footer modal-bigger">
-	                  <div class="modal-content">
-	                    <!-- Start Module Form-->
-	                    <h3 style="text-align: center;">Product Form</h3>
-	                      <div class="row">
-	                        <form class="col s12 disabled">
-	                          <!-- productId -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="productID">
-	                              <label for="productID">Product ID</label>
-	                            </div>
-	                          </div>                            
-	                          <!-- Register Product/Unregister Product -->
-	                          <div class="row">
-	                              <div class="switch">
-	                                <label>
-	                                  Unregister Product
-	                                  <input type="checkbox">
-	                                  <span class="lever"></span>
-	                                  Register Product
-	                                </label>
-	                              </div>
-	                          </div>
-	                          <!-- Product Class/Product/Product Form -->
-	                          <div class="row">
-	                            <div class="input-field col s4">
-	                              <select id="productclass">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Product Class 1</option>
-	                                <option value="2">Product Class 2</option>
-	                                <option value="3">Product Class 3</option>
-	                              </select>
-	                              <label for="productclass">Product Class</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <select id="product">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Product 1</option>
-	                                <option value="2">Product 2</option>
-	                                <option value="3">Product 3</option>
-	                              </select>
-	                              <label for="product">Product</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <select id="productform">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Product Form 1</option>
-	                                <option value="2">Product Form 2</option>
-	                                <option value="3">Product Form 3</option>
-	                              </select>
-	                              <label for="productform">Product Form</label>
-	                            </div>
-	                          </div>
-	                          <!-- Pack Size/Shelf Life -->
-	                          <div class="row">
-	                            <div class="input-field col s6">
-	                              <select id="packsize">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Pack Size 1</option>
-	                                <option value="2">Pack Size 2</option>
-	                                <option value="3">Pack Size 3</option>
-	                              </select>
-	                              <label for="packsize">Pack Size</label>
-	                            </div>
-	                            <div class="input-field col s6">
-	                              <input type="text" id="shelflife">
-	                              <label for="shelflife">Shelf Life</label>
-	                            </div>
-	                          </div>
-	                          <!-- Batch Number -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input id="batchnumber" type="number"/>
-	                              <label for="batchnumber">Batch Number</label>
-	                            </div>
-	                          </div>
-	                          <!-- CIF Unit Price/Invoice Unit Price/Quantity -->
-	                          <div class="row">
-	                            <div class="input-field col s4">
-	                              <input id="cifuprice" type="number" step="any"/>
-	                              <label for="cifuprice">CIF Unit Price</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <input id="invoiceuprice" type="number" step="any"/>
-	                              <label for="invoiceuprice">Invoice Unit Price</label>
-	                            </div>
-	                            <div class="input-field col s4">
-	                              <input id="quantity" type="number"/>
-	                              <label for="quantity">Quantity</label>
-	                            </div>
-	                          </div>
-	                          <!-- Batch Manufacturing Date/Batch Expiry Date -->
-	                          <div class="row">
-	                            <div class="input-field col s6">
-	                              <input id="batchmanufdate" type="text" class="datepicker"/>
-	                              <label for="batchmanufdate">Batch Manufacturing Date</label>
-	                            </div>
-	                            <div class="input-field col s6">
-	                              <input id="batchexpdate" type="text" class="datepicker"/>
-	                              <label for="batchexpdate">Batch Expiry Date</label>
-	                            </div>
-	                          </div>
-	                          <!-- Manufacturer/Country of Origin -->
-	                          <div class="row">
-	                            <div class="input-field col s6">
-	                              <select id="manufacturer">
-	                                <option value="" disabled selected>Choose your option</option>
-	                                <option value="1">Manufacturer 1</option>
-	                                <option value="2">Manufacturer 2</option>
-	                                <option value="3">Manufacturer 3</option>
-	                              </select>
-	                              <label for="manufacturer">Manufacturer</label>
-	                            </div>
-	                            <div class="input-field col s6">
-	                              <input id="countryoforigin" type="text"/>
-	                              <label for="countryoforigin">Country of Origin</label>
-	                            </div>
-	                          </div>
-	                        </form>
-	                      </div>
-	                    <!-- End Module Form -->
-	                  </div>
-	                  <div class="modal-footer">
-	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
-	                  </div>
-	                </div>
-	                <!-- END Product MODAL -->
-	                <!-- START Documents MODAL -->
-	                <div id="modal-documents" class="modal modal-fixed-footer modal-bigger">
-	                  <div class="modal-content">
-	                    <!-- Start Module Form-->
-	                    <h3 style="text-align: center;">Documents Form</h3>
-	                      <div class="row disabled">
-	                        <form class="col s12">
-	                          <!-- documentId -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="documentID">
-	                              <label for="documentID">Document ID</label>
-	                            </div>
-	                          </div>                            
-	                          <!-- Document Name -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="documentName">
-	                              <label for="documentName">Document Name</label>
-	                            </div>
-	                          </div>   
-	                          <!-- Document Type -->
-	                          <div class="row">
-	                            <div class="input-field col s12">
-	                              <input type="text" id="documentType">
-	                              <label for="documentType">Document Type</label>
-	                            </div>
-	                          </div> 
-	                          <!-- Document Hash/Uploads -->
-	                          <div class="row">
-	                            <div class="file-field input-field">
-	                              <div class="btn">
-	                                <span>Documents</span>
-	                                <input name="file" type="file" multiple>
-	                              </div>
-	                              <div class="file-path-wrapper">
-	                                <input class="file-path validate" type="text">
-	                              </div>
-	                            </div>
-	                          </div>
-	                        </form>
-	                      </div>
-	                    <!-- End Module Form -->
-	                  </div>
-	                  <div class="modal-footer">
-	                  <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat "><i class="material-icons">close</i></a>
-	                  </div>
-	                </div>
-	                <!-- END Documents MODAL -->
-              </div>
         </div>
       </div>
   </body>
