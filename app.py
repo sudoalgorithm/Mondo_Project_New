@@ -320,9 +320,9 @@ def airwayBillLanding():
 	}
 	jsonICL = {
 		"$class": "org.acme.mondo.IssueCoverLetter",
-		"MoFALetter": "resource:org.acme.mondo.MoFALetter#1231",
-		"WHOLetter": "resource:org.acme.mondo.WHOLetter#1231",
-		"airwayBill": "resource:org.acme.mondo.AirwayBill#1231"
+		"MoFALetter": "resource:org.acme.mondo.MoFALetter#123",
+		"WHOLetter": "resource:org.acme.mondo.WHOLetter#123",
+		"airwayBill": "resource:org.acme.mondo.AirwayBill#123"
 	}
 	url = 'http://localhost:3000/api/AirwayBill'
 	url1 = 'http://localhost:3000/api/IssueCoverLetter'
