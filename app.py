@@ -12,24 +12,10 @@ def index():
 def ca():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
 	
 	return render_template('ca.html')
 	
@@ -38,24 +24,10 @@ def ca():
 def customs():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('customs.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('customs.html')	
 
@@ -63,24 +35,10 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('fa.html')
 
@@ -88,24 +46,10 @@ def fa():
 def ihc():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('ihc.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('ich.html')	
 
@@ -113,24 +57,10 @@ def ihc():
 def mofa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('mofa.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('mofa.html')
 
@@ -138,24 +68,10 @@ def mofa():
 def moh():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None:
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('moh.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('moh.html')	
 
@@ -163,24 +79,10 @@ def moh():
 def who():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json()[0]['transactionId'] in responsefa.json():
+	if responsefa.json() is not None: 
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)
-	if responsefa.json()[0]['transactionId'] and responsefa.json()[1]['transactionId'] and responsefa.json()[2]['transactionId'] in responsefa.json():
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		json_val2 = responsefa.json()[1]['transactionId']
-		json_val3 = responsefa.json()[1]['timestamp']
-		json_val4 = responsefa.json()[2]['transactionId']
-		json_val5 = responsefa.json()[2]['timestamp']
-		return render_template('ca.html', json_val=json_val, json_val1=json_val1, json_val2=json_val2, json_val3=json_val3)	
+		return render_template('who.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('who.html')	
 
