@@ -398,9 +398,16 @@ def perImportPermit():
 			"documentHash": filepathvalidate,
 			"isApproved": 'true'
 	}
-	url = "http://localhost:3000/api/PreImportPermit"
+	jsonPIPTranx = {
+			"$class": "org.acme.mondo.IssuePermitRequest",
+			"preImportPermit": "resource:org.acme.mondo.PreImportPermit#123"
+	}
+	url = 'http://localhost:3000/api/PreImportPermit'
+	url1 = 'http://localhost:3000/api/IssuePermitRequest'
 	responsePIP = requests.post(url, json=jsonPIP)
 	responsePIP.text
+	responsePIPTranx = requests.post(url1, json=jsonPIPTranx)
+	responsePIPTranx.text
 	return redirect(url_for('who'))
 
 
