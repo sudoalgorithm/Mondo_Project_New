@@ -332,6 +332,77 @@ def airwayBillLanding():
 	response1.text
 	return redirect(url_for('ihc'))
 
+@app.route('/perImportPermit', methods=['POST','GET'])
+def perImportPermit():
+	moduleID = request.form['moduleID']
+	typeID = request.form['type']
+	importmodule = request.form['importmodule']
+	MOHNumber = request.form['MOHNumber']
+	importer = request.form['importer']
+	country = request.form['country']
+	city = request.form['city']
+	address = request.form['address']
+	pobox = request.form['pobox']
+	phone = request.form['phone']
+	fax = request.form['Fax']
+	email = request.form['email']
+	website = request.form['website']
+	productclass = request.form['productclass']
+	product = request.form['product']
+	productform = request.form['productform']
+	packsize = request.form['packsize']
+	shelflife = request.form['shelflife']
+	batchnumber = request.form['batchnumber']
+	cifuprice = request.form['cifuprice']
+	invoiceuprice = request.form['invoiceuprice']
+	quantity = request.form['quantity']
+	batchmanufdate = request.form['batchmanufdate']
+	batchexpdate = request.form['batchexpdate']
+	manufacturer = request.form['manufacturer']
+	countryoforigin = request.form['countryoforigin']
+	documentName = request.form['documentName']
+	documentType = request.form['documentType']
+	filepathvalidate = request.form['filepathvalidate']
+	jsonPIP = {
+			"$class": "org.acme.mondo.PreImportPermit",
+			"preImportPermitId": moduleID,
+			"type": typeID,
+			"importModule": importmodule,
+			"MOHLicenseNumber": MOHNumber, 
+			"importer": importer,
+			"country": country,
+			"city": city,
+			"address": address,
+			"POBox": pobox,
+			"phone": phone,
+			"fax": fax,
+			"email": email,
+			"website": website,
+			"registerProduct": 'true',
+			"unregisterProduct": 'true',
+			"productClass": productclass,
+			"product": product,
+			"productForm": productform,
+			"packSize": packsize,
+			"shelfLife": shelflife,
+			"batchNumber": batchnumber,
+			"CIFUnitPrice": cifuprice,
+			"invoiceUnitPrice": invoiceuprice,
+			"quantity": quantity,
+			"batchManufacturingDate": batchmanufdate,
+			"batchExpireDate": batchexpdate,
+			"manufacturer": manufacturer,
+			"countryOfOrigin": countryoforigin,
+			"documentName": documentName,
+			"documentType": documentType,
+			"documentHash": filepathvalidate,
+			"isApproved": 'true'
+	}
+	url = "http://localhost:3000/api/PreImportPermit"
+	responsePIP = requests.post(url, json=jsonPIP)
+	responsePIP.text
+	return redirect(url_for('who'))
+
 
 
 if __name__ == '__main__':
