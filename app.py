@@ -320,17 +320,18 @@ def airwayBillLanding():
 	}
 	jsonICL = {
 		"$class": "org.acme.mondo.IssueCoverLetter",
-		"MoFALetter": "resource:org.acme.mondo.MoFALetter#123",
-		"WHOLetter": "resource:org.acme.mondo.WHOLetter#123",
-		"airwayBill": "resource:org.acme.mondo.AirwayBill#123"
+		"MoFALetter": "resource:org.acme.mondo.MoFALetter#1231",
+		"WHOLetter": "resource:org.acme.mondo.WHOLetter#1231",
+		"airwayBill": "resource:org.acme.mondo.AirwayBill#1231"
 	}
 	url = 'http://localhost:3000/api/AirwayBill'
 	url1 = 'http://localhost:3000/api/IssueCoverLetter'
-	responseABL = requests.post(url, json=jsonValue)
-	responseABL.text
-	responseICL = requests.post(url1, json=jsonICL)
-	responseICL.text
+	response = requests.post(url, json=jsonValue)
+	response.text
+	response1 = requests.post(url1, json=jsonICL)
+	response1.text
 	return redirect(url_for('ihc'))
+
 
 
 if __name__ == '__main__':
