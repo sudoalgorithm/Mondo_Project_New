@@ -35,7 +35,10 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	
+	if responsefa.json() is not None:
+		json_val = responsefa.json()[0]['transactionId']
+		json_val1 = responsefa.json()[0]['timestamp']
+		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
 	
 	return render_template('fa.html')
 
