@@ -16,7 +16,7 @@ def ca():
 		json_val = responsefa.json()[0]['transactionId']
 		json_val1 = responsefa.json()[0]['timestamp']
 		return render_template('ca.html', json_val=json_val, json_val1=json_val1)
-	
+	print responsefa.json().text()
 	return render_template('ca.html')
 	
 
