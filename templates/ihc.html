@@ -114,224 +114,196 @@
                           <div class="row">
                             <!-- FROM -->
                             <h5>From</h5>
-                            <form class="col s12">
+                            <form class="col s12" action="airwayBillLanding" method="POST">
                               <!-- fromId -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="fromID">
+                                  <input type="text" id="fromID" name="fromID">
                                   <label for="fromID">From ID</label>
                                 </div>
                               </div>
                               <!-- Date -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="datelading" class="datepicker">
+                                  <input type="text" id="datelading" name="datelading" class="datepicker">
                                   <label for="datelading">Date</label>
                                 </div>
                               </div>
                               <!-- Sender's First/Last Names -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" id="senderfirst">
+                                  <input type="text" id="senderfirst" name="senderfirst">
                                   <label for="senderfirst">Sender's First Name</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="senderlast">
+                                  <input type="text" id="senderlast" name="senderlast">
                                   <label for="senderlast">Sender's Last Name</label>
                                 </div>
                               </div>
                               <!-- Phone Number -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="phonenum">
+                                  <input type="text" id="phonenum" name="phonenum">
                                   <label for="phonenum">Phone Number</label>
                                 </div>
                               </div>
                               <!-- Delivery Address/Zip Code -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <textarea class="materialize-textarea" id="deladdress"></textarea>
+                                  <textarea class="materialize-textarea" id="deladdress" name="deladdress"></textarea>
                                   <label for="deladdress">Delivery Address</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="zipcode" class="datepicker">
+                                  <input type="text" id="zipcode" class="datepicker" name="zipcode">
                                   <label for="zipcode">Zip Code</label>
                                 </div>
                               </div>
-                            </form>
-                            <!-- TO -->
-                            <h5>To</h5>
-                            <form class="col s12">
                               <!-- toId -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="toID">
+                                  <input type="text" id="toID" name="toID">
                                   <label for="toID">To ID</label>
                                 </div>
                               </div>
                               <!-- Recipient's First/Last Names -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" id="recipientfirst">
+                                  <input type="text" id="recipientfirst" name="recipientfirst">
                                   <label for="recipientfirst">Recipient's First Name</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="recipientlast">
+                                  <input type="text" id="recipientlast" name="recipientlast">
                                   <label for="recipientlast">Recipient's Last Name</label>
                                 </div>
                               </div>
                               <!-- Phone Number -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="phonenum">
-                                  <label for="phonenum">Phone Number</label>
+                                  <input type="text" id="fax" name="fax">
+                                  <label for="fax">Phone Number</label>
                                 </div>
                               </div>
                               <!-- Delivery Address/Zip Code -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <textarea class="materialize-textarea" id="deladdress"></textarea>
-                                  <label for="deladdress">Delivery Address</label>
+                                  <textarea class="materialize-textarea" id="receiverDeliveryAddress" name="receiverDeliveryAddress"></textarea>
+                                  <label for="receiverDeliveryAddress">Delivery Address</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" id="zipcode" class="datepicker">
+                                  <input type="text" id="zipcode" class="datepicker" name="zipcode">
                                   <label for="zipcode">Zip Code</label>
                                 </div>
                               </div>
                               <!-- Tax ID Number -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" id="taxnumber">
+                                  <input type="number" id="taxnumber" name="taxnumber">
                                   <label for="taxnumber">Zip Code</label>
-                                </div>
-                              </div>
-                            </form>
-                            <!-- SHIPMENT INFORMATION -->
-                            <h5>Shipment Information</h5>
-                            <form class="col s12">
-                              <!-- shipmentId -->
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input type="text" id="shipmentID">
-                                  <label for="shipmentID">Shipment ID</label>
                                 </div>
                               </div>
                               <!-- Shipment Information -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="shipmentInfo">
+                                  <input type="text" id="shipmentInfo" name="shipmentInfo">
                                   <label for="shipmentInfo">Shipment Information</label>
                                 </div>
                               </div>
                               <!-- Description -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <textarea class="materialize-textarea" id="desc"></textarea>
+                                  <textarea class="materialize-textarea" id="desc" name="desc"></textarea>
                                   <label for="desc">Description</label>
                                 </div>
                               </div>
                               <!-- Country of Manufacture -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="countryofmanufacture">
+                                  <input type="text" id="countryofmanufacture" name="countryofmanufacture">
                                   <label for="countryofmanufacture">Country of Manufacture</label>
                                 </div>
                               </div>
                               <!-- Total Value of Customs -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" id="totalValOfCustoms" step=any>
+                                  <input type="number" id="totalValOfCustoms" step=any name="totalValOfCustoms">
                                   <label for="totalValOfCustoms">Total Value of Customs</label>
                                 </div>
-                              </div>
-                            </form>       
-                            <!-- POSTAL INFORMATION -->
-                            <h5>Postal Information</h5>
-                            <form class="col s12">
-                              <!-- postalId -->
-                              <div class="row">
-                                <div class="input-field col s12">
-                                  <input type="text" id="postalID">
-                                  <label for="postalID">Postal ID</label>
-                                </div>
-                              </div>
+                              </div>       
                               <!-- Acceptance Date/Acceptance Time -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="text" class="datepicker" id="acceptanceDate">
+                                  <input type="text" class="datepicker" id="acceptanceDate" name="acceptanceDate">
                                   <label for="acceptanceDate">Acceptance Date</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="text" class="timepicker" id="acceptanceTime">
+                                  <input type="text" class="timepicker" id="acceptanceTime" name="acceptanceTime">
                                   <label for="acceptanceTime">Acceptance Time</label>
                                 </div>
                               </div>
                               <!-- Scheduled Delivery Date -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" class="datepicker" id="deliveryDate">
+                                  <input type="text" class="datepicker" id="deliveryDate" name="deliveryDate">
                                   <label for="deliveryDate">Scheduled Delivery Date</label>
                                 </div>
                               </div>
                               <!-- Acceptance Zip + 4 Code -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="acceptancezip">
+                                  <input type="text" id="acceptancezip" name="acceptancezip">
                                   <label for="acceptancezip">Acceptance Zip + 4 Code</label>
                                 </div>
                               </div>
                               <!-- Employee Initials -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text" id="empinitials">
+                                  <input type="text" id="empinitials" name="empinitials">
                                   <label for="empinitials">Employee Initials</label>
                                 </div>
                               </div>
                               <!-- Dimension in Inches -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" step=any id="dimension">
+                                  <input type="number" step=any id="dimension" name="dimension">
                                   <label for="dimension">Dimension</label>
                                 </div>
                               </div>
                               <!-- Weight of Shipment -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" step=any id="weightofshipment">
+                                  <input type="number" step=any id="weightofshipment" name="weightofshipment">
                                   <label for="weightofshipment">Weight of Shipment</label>
                                 </div>
                               </div>
                               <!-- Postage in US Dollars -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="number" step=any id="postage">
+                                  <input type="number" step=any id="postage" name="postage">
                                   <label for="postage">Postage in $</label>
                                 </div>
                               </div>
                               <!-- Insurance Fee/Total Postage and Fees -->
                               <div class="row">
                                 <div class="input-field col s6">
-                                  <input type="number" step=any id="insurancefee">
+                                  <input type="number" step=any id="insurancefee" name="insurancefee">
                                   <label for="insurancefee">Insurance Fee</label>
                                 </div>
                                 <div class="input-field col s6">
-                                  <input type="number" step=any id="postageandfees">
+                                  <input type="number" step=any id="postageandfees" name="postageandfees">
                                   <label for="postageandfees">Total Postage and Fees</label>
                                 </div>
                               </div>
                               <!-- Packaging Type -->
                               <div class="row">
                                 <div class="input-field col s12">
-                                  <input type="text"  id="packagingtype">
+                                  <input type="text"  id="packagingtype" name="packagingtype">
                                   <label for="packagingtype">Packaging Type</label>
                                 </div>
-                              </div>                              
-                            </form>  
+                              </div>                                
                             <div class="row">
-                              <form class="col s12">
-                                <button class="btn waves-effect waves-light center" type="submit" name="action">Submit</button>
-                              </form>
+                                <button class="btn waves-effect waves-light center" type="submit">Submit</button>
                             </div>                            
+                            </form>
                           </div>
                         <!-- END FORM (BILL OF LADING) -->
                       </div>

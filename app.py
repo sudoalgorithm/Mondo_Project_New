@@ -35,10 +35,7 @@ def customs():
 def fa():
 	url = 'http://localhost:3000/api/InitiateImportProcess'
 	responsefa = requests.get(url)
-	if responsefa.json() is not None:
-		json_val = responsefa.json()[0]['transactionId']
-		json_val1 = responsefa.json()[0]['timestamp']
-		return render_template('fa.html', json_val=json_val, json_val1=json_val1)
+	
 	
 	return render_template('fa.html')
 
@@ -251,6 +248,76 @@ def whoLetter():
 	url = 'http://localhost:3000/api/WHOLetter'
 	respone = requests.post(url, json=jsonWhoLetter)
 	respone.text
+	return redirect(url_for('ihc'))
+
+@app.route('/airwayBillLanding', methods=['POST','GET'])
+def airwayBillLanding():
+	fromID = request.form['fromID']
+	datelading = request.form['datelading']
+	senderfirst = request.form['senderfirst']
+	senderlast = request.form['senderlast']
+	phonenum = request.form['phonenum']
+	deladdress = request.form['deladdress']
+	zipcode = request.form['zipcode']
+	toID = request.form['toID']
+	recipientfirst = request.form['recipientfirst']
+	recipientlast = request.form['recipientlast']
+	fax = request.form['fax']
+	receiverDeliveryAddress = request.form['receiverDeliveryAddress']
+	zipcode = request.form['zipcode']
+	taxnumber = request.form['taxnumber']
+	shipmentInfo = request.form['shipmentInfo']
+	desc = request.form['desc']
+	countryofmanufacture = request.form['countryofmanufacture']
+	totalValOfCustoms = request.form['totalValOfCustoms']
+	acceptanceDate = request.form['acceptanceDate']
+	acceptanceTime = request.form['acceptanceTime']
+	deliveryDate = request.form['deliveryDate']
+	acceptancezip = request.form['acceptancezip']
+	empinitials = request.form['empinitials']
+	dimension = request.form['dimension']
+	weightofshipment = request.form['weightofshipment']
+	postage = request.form['postage']
+	insurancefee = request.form['insurancefee']
+	postageandfees = request.form['postageandfees']
+	packagingtype = request.form['packagingtype']
+	
+	jsonValue = {
+		"$class": "org.acme.mondo.AirwayBill",
+		"airwayBillId": fromID,
+		"date": datelading,
+		"senderFirstName": senderfirst,
+		"senderLastName": senderlast,
+		"senderPhoneNumber": phonenum,
+		"senderDeliveryAddress": deladdress,
+		"senderZipCode": zipcode,
+		"recipientFirstName": toID,
+		"recipientLastName": recipientfirst,
+		"receiverPhoneNumber": recipientlast,
+		"fax": fax,
+		"receiverDeliveryAddress": receiverDeliveryAddress,
+		"receiverZipCode": zipcode,
+		"taxIDNumber": taxnumber,
+		"shipmentInformation": shipmentInfo,
+		"description": desc,
+		"countryOfManufacture": countryofmanufacture,
+		"totalValueofCustoms": totalValOfCustoms,
+		"acceptanceDateIn": acceptanceDate,
+		"acceptanceTimeIn": acceptanceTime,
+		"scheduledDeliveryDate": deliveryDate,
+		"acceptanceZipAnd4Code": acceptancezip,
+		"employeeInitials": empinitials,
+		"dimensionInInches": dimension,
+		"weightOfShipment": weightofshipment,
+		"postageInUSDollars": postage,
+		"insuranceFee": insurancefee,
+		"totalPostageAndFees": postageandfees,
+		"packagingType": packagingtype,
+		"isApproved": 'false'	
+	}
+	url = 'http://localhost:3000/api/AirwayBill'
+	responseABL = requests.post(url, json=jsonValue)
+	responseABL.text
 	return redirect(url_for('ihc'))
 
 
